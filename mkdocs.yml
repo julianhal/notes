@@ -198,13 +198,8 @@ nav:
     - 'GDB': 'tools/gdb.md'
 
 
-theme:
-  name: null
-  custom_dir: mkdocs_windmill
-  # Copy settings from mkdocs_theme.yml, which is ignored by custom_dir themes.
-  static_templates: [404.html]
-  search_index_only: true
-  include_search_page: true
+theme: 'windmill-dark'
+
 
 markdown_extensions:
   - toc:
