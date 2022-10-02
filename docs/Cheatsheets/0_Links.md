@@ -1,14 +1,4 @@
----
-title: "List cheat sheets"
-categories: Guides
-tags: tool guide
-hidden: true 
-header:
-    overlay_image: https://i.imgur.com/Uo9F3uE.jpg
-excerpt: List of collected tools, guides and cheat-sheets
----
-
-# Cheat sheets
+# Links
 
 
 ## General CTF cheat sheets
