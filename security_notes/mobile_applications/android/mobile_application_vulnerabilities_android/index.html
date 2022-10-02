@@ -1,0 +1,5920 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Infosec-Notes">
+      
+      
+        <meta name="author" content="julianhal">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Mobile application vulnerabilities android - Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#check-for-manifest-misconfigurations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Notes" class="md-header__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mobile application vulnerabilities android
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/julianhal/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Notes" class="md-nav__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/julianhal/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          0 basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="0 basics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          0 basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../0-basics/1-network-basics/" class="md-nav__link">
+        network basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../0-basics/2-metasploit-basics/" class="md-nav__link">
+        metasploit basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Basics of linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Basics of linux" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Basics of linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../0-basics/basics_of_linux/bash_scripting/" class="md-nav__link">
+        Bash-scripting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../0-basics/basics_of_linux/basics_of_linux/" class="md-nav__link">
+        Basics of linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../0-basics/basics_of_linux/common_devices_and_components/" class="md-nav__link">
+        Load balancer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../0-basics/basics_of_linux/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../0-basics/basics_of_linux/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          1 recon enum
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1 recon enum" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          1 recon enum
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-recon-enum/1-0-passive-recon/" class="md-nav__link">
+        passive recon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-recon-enum/1-1-port-scanning-server-side-enumeration/" class="md-nav__link">
+        PORT SCANNING
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-recon-enum/1-3-common-ports/" class="md-nav__link">
+        COMMON PORTS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-recon-enum/1_recon_and_enumeration/" class="md-nav__link">
+        Chapter 2 - Recon & Enumeration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          2 web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2 web" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          2 web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-web/0-initial-enumeration/" class="md-nav__link">
+        initial methodology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-web/LFI-RFI/" class="md-nav__link">
+        Local and Remote file inclusion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-web/cms/" class="md-nav__link">
+        CMSs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-web/command-injection/" class="md-nav__link">
+        command injection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-web/csrf/" class="md-nav__link">
+        CSRF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-web/sqli/" class="md-nav__link">
+        SQL Injections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-web/ssl/" class="md-nav__link">
+        ssl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-web/ssrf/" class="md-nav__link">
+        ssrf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-web/upload-bypass/" class="md-nav__link">
+        upload-bypass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-web/verb-tampering/" class="md-nav__link">
+        verb tampering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-web/xee/" class="md-nav__link">
+        XXE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-web/xss/" class="md-nav__link">
+        XSS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          3 Exploiting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3 Exploiting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          3 Exploiting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-Exploiting/0_exploiting_vulnerabilities/" class="md-nav__link">
+        Chapter 3 - Exploiting Vulnerabilities
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-Exploiting/1-webshells/" class="md-nav__link">
+        webshells
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-Exploiting/2-shellcodes-compiling-deploying/" class="md-nav__link">
+        shellcodes , compiling and deploying
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-Exploiting/3-bypassing-AV/" class="md-nav__link">
+        bypassing AV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-Exploiting/4-databases/" class="md-nav__link">
+        databases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-Exploiting/6-reverse-shells/" class="md-nav__link">
+        Reverse Shells
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-Exploiting/7_exploit_development/" class="md-nav__link">
+        Chapter 6 - Exploit Development
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          4 win privesc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="4 win privesc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          4 win privesc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/0_windows_post_exploitation/" class="md-nav__link">
+        Chapter 4 - Windows Post-Exploitation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/1-initial/" class="md-nav__link">
+        initial
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/10-always-install-elevated/" class="md-nav__link">
+        always install elevated
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/11-secondary-logon-ms16-032/" class="md-nav__link">
+        secondary logon handle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/12-insecure-registry/" class="md-nav__link">
+        insecure registry permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/13-intel-sysret/" class="md-nav__link">
+        intel sysret
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/14-runas/" class="md-nav__link">
+        runas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/15-LFI-FILES/" class="md-nav__link">
+        LFI files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/16-UAC/" class="md-nav__link">
+        UAC bypass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/17-llmnr/" class="md-nav__link">
+        LLMNR and NBT-NS poisoning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/2-stored-credentials/" class="md-nav__link">
+        stored credentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/3-kernel/" class="md-nav__link">
+        Kernel Vulns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/4-dll-injection/" class="md-nav__link">
+        DLL Injection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/5-weak-service-permissions/" class="md-nav__link">
+        weak services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/6-dll-hijacking/" class="md-nav__link">
+        DLL hijacking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/7-potato/" class="md-nav__link">
+        POTATOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/8-group-policies-preferences/" class="md-nav__link">
+        group policy preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/9-unquoted-service-path/" class="md-nav__link">
+        unquoted service path
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_19" type="checkbox" id="__nav_6_19" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_19">
+          CLSIDs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CLSIDs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_19">
+          <span class="md-nav__icon md-icon"></span>
+          CLSIDs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/CLSIDs/Windows%2010%20Enterprise/" class="md-nav__link">
+        Windows 10 Enterprise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/CLSIDs/Windows%20Server%202008%20R2%20Enterprise/" class="md-nav__link">
+        Windows Server 2008 R2 Enterprise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/CLSIDs/Windows%20Server%202012%20Datacenter/" class="md-nav__link">
+        Windows Server 2012 Datacenter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/CLSIDs/Windows%20Server%202016%20Standard/" class="md-nav__link">
+        Windows Server 2016 Standard
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/CLSIDs/Windows-8-1-Enterprise/" class="md-nav__link">
+        Windows 8.1 Enterprise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/CLSIDs/windows%2010%20pro/" class="md-nav__link">
+        Windows 10 Pro |
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-win-privesc/CLSIDs/windows7Enterprise/" class="md-nav__link">
+        Windows 7 Enterprise
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          5 linux privesc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="5 linux privesc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          5 linux privesc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../5-linux-privesc/4-2-linux-privesc/" class="md-nav__link">
+        linux privesc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../5-linux-privesc/lin-security/" class="md-nav__link">
+        lin-security + GTFO bins
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          6 post exploitation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="6 post exploitation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          6 post exploitation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../6-post-exploitation/4-0-windows-file-transfer/" class="md-nav__link">
+        windows file transfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../6-post-exploitation/4-3-passwords%2Bhash_attacks/" class="md-nav__link">
+        passwords attacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../6-post-exploitation/4.4-pivoting%2Btunneling/" class="md-nav__link">
+        pivoting+tunneling
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          7 misc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="7 misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          7 misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../7-misc/0_misc/" class="md-nav__link">
+        Chapter 9 - Miscellaneous
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../7-misc/tips/" class="md-nav__link">
+        tips
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          8 Cracking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="8 Cracking" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          8 Cracking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../8-Cracking/0_cracking/" class="md-nav__link">
+        0 cracking
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          9 binexp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="9 binexp" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          9 binexp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../9-binexp/0_reverse%20_engineering/" class="md-nav__link">
+        Chapter 8 - Reverse Engineering
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Cheatsheets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheatsheets" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Cheatsheets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cheatsheets/0_Links/" class="md-nav__link">
+        Links
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cheatsheets/0_various_cheatsheets/" class="md-nav__link">
+        Various cheatsheets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cheatsheets/msfvenom/" class="md-nav__link">
+        msfvenom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cheatsheets/nmap/" class="md-nav__link">
+        nmap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cheatsheets/powershell/" class="md-nav__link">
+        powershell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cheatsheets/tmux/" class="md-nav__link">
+        tmux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13">
+          Security notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Security notes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Security notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1" type="checkbox" id="__nav_13_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1">
+          Active directory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Active directory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_1">
+          <span class="md-nav__icon md-icon"></span>
+          Active directory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/attacking_windows_domain_domain_trust/" class="md-nav__link">
+        Attacking windows domain domain trust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/attacking_windows_domain_local_privilege_escalation/" class="md-nav__link">
+        Privilege Escalation Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/domain_privilege_escalation_checklist/" class="md-nav__link">
+        Domain privilege escalation checklist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_4" type="checkbox" id="__nav_13_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_4">
+          Active directory privilege escalation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Active directory privilege escalation" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Active directory privilege escalation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/abusing_constrained_delegation/" class="md-nav__link">
+        Abusing constrained delegation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/abusing_unconstrained_delegation/" class="md-nav__link">
+        Abusing unconstrained delegation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/aseproasting/" class="md-nav__link">
+        Aseproasting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/check_for_insecure_usage_of_high_privileged_accounts/" class="md-nav__link">
+        Check for insecure usage of high privileged accounts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/check_for_local_admin_privileges/" class="md-nav__link">
+        Check for local admin privileges
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/check_for_lockout_threshold/" class="md-nav__link">
+        Check for lockout threshold
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/check_for_misconfgured_access_control_of_mssql/" class="md-nav__link">
+        Check for misconfgured access control of mssql
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/check_for_misconfigured_gpo/" class="md-nav__link">
+        Check for misconfigured gpo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/check_for_misconfigured_laps/" class="md-nav__link">
+        Check for misconfigured laps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/check_for_reuse_of_local_admin_password/" class="md-nav__link">
+        Check for reuse of local admin password
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/check_for_scripts_on_sysvol/" class="md-nav__link">
+        Check for scripts on sysvol
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/check_for_unsupported_os/" class="md-nav__link">
+        Check for unsupported os
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/check_for_writable_executables_on_shares/" class="md-nav__link">
+        Check for writable executables on shares
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/credential_extraction/" class="md-nav__link">
+        Credential Extraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/execssive_amount_of_domain_admins/" class="md-nav__link">
+        Execssive amount of domain admins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/incorrectly_configured_forest_or_domain_trust/" class="md-nav__link">
+        Incorrectly configured forest or domain trust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/kerberoasting/" class="md-nav__link">
+        Kerberoasting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/misconfigured_access_control_lists/" class="md-nav__link">
+        Misconfigured access control lists
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/misconfigured_read_only_domain_controller/" class="md-nav__link">
+        Misconfigured read only domain controller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/ntlm_relaying_and_theft/" class="md-nav__link">
+        Ntlm relaying and theft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/passwords_in_active_directory_attributes/" class="md-nav__link">
+        Passwords in active directory attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/passwords_in_group_policy_preferences/" class="md-nav__link">
+        Passwords in group policy preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/smb_shares_mining/" class="md-nav__link">
+        Smb shares mining
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/active_directory_privilege_escalation/template/" class="md-nav__link">
+        Template
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_5" type="checkbox" id="__nav_13_1_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_5">
+          Cracking hashes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cracking hashes" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cracking hashes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/cracking_hashes/cracking_hashes/" class="md-nav__link">
+        Cracking hashes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/cracking_hashes/generate_password_list/" class="md-nav__link">
+        Generate password list
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_6" type="checkbox" id="__nav_13_1_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_6">
+          Good to know
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Good to know" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Good to know
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/good_to_know/active_directory_help_commands/" class="md-nav__link">
+        Active directory help commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/good_to_know/ldap_syntax/" class="md-nav__link">
+        Ldap syntax
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/good_to_know/neo4j_and_cypher/" class="md-nav__link">
+        Neo4j and cypher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/good_to_know/tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/good_to_know/transferring_files/" class="md-nav__link">
+        Transferring files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/good_to_know/windows_access_control/" class="md-nav__link">
+        Windows access control
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_7" type="checkbox" id="__nav_13_1_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_7">
+          Initial access
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Initial access" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          Initial access
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/initial_access/llmnr_and_nbtns_poisoning/" class="md-nav__link">
+        Llmnr and nbtns poisoning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/initial_access/mitm6/" class="md-nav__link">
+        Mitm6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/initial_access/password_spraying/" class="md-nav__link">
+        Password spraying
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/initial_access/wpad_spoofing/" class="md-nav__link">
+        Wpad spoofing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_8" type="checkbox" id="__nav_13_1_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_8">
+          Local privilege escalation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Local privilege escalation" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_8">
+          <span class="md-nav__icon md-icon"></span>
+          Local privilege escalation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/local_privilege_escalation/local_privilege_escalation/" class="md-nav__link">
+        Privilege Escalation Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/local_privilege_escalation/shutdown_windows_defender/" class="md-nav__link">
+        Shut down windows defender
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_9" type="checkbox" id="__nav_13_1_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_9">
+          Powershell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Powershell" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_9">
+          <span class="md-nav__icon md-icon"></span>
+          Powershell
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/powershell/activedirectory/" class="md-nav__link">
+        Powershell - Active Directory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/powershell/amsi_bypass/" class="md-nav__link">
+        Antimalware Scan Interface (AMSI)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/powershell/basics_of_powershell/" class="md-nav__link">
+        Basics of powershell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/powershell/jit_csharp_compilation/" class="md-nav__link">
+        Load native Windows API functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/powershell/local_machine_recon/" class="md-nav__link">
+        Windows - Local recon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/powershell/networking/" class="md-nav__link">
+        Networking with powershell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/powershell/running_program_as_user_without_guiinteraction/" class="md-nav__link">
+        Running program as user without guiinteraction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_10" type="checkbox" id="__nav_13_1_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_10">
+          Recon
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Recon" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_10">
+          <span class="md-nav__icon md-icon"></span>
+          Recon
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/recon/active_directory_recon/" class="md-nav__link">
+        Active directory recon
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_11" type="checkbox" id="__nav_13_1_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_11">
+          Remote access
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Remote access" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_11">
+          <span class="md-nav__icon md-icon"></span>
+          Remote access
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/remote_access/remote_access/" class="md-nav__link">
+        Remote access
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_12" type="checkbox" id="__nav_13_1_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_12">
+          Understanding active directory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Understanding active directory" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_12">
+          <span class="md-nav__icon md-icon"></span>
+          Understanding active directory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/understanding_active_directory/about_active_directory/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/understanding_active_directory/ad_physical_topology/" class="md-nav__link">
+        Ad physical topology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/understanding_active_directory/default_groups/" class="md-nav__link">
+        Default groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/understanding_active_directory/domain_controller/" class="md-nav__link">
+        Domain controller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/understanding_active_directory/group_policies/" class="md-nav__link">
+        Group policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../active_directory/understanding_active_directory/kerberos/" class="md-nav__link">
+        Kerberos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_2" type="checkbox" id="__nav_13_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_2">
+          Basic hardening
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Basic hardening" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_2">
+          <span class="md-nav__icon md-icon"></span>
+          Basic hardening
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic_hardening/hardening_bios/" class="md-nav__link">
+        Hardening bios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic_hardening/hardening_linux/" class="md-nav__link">
+        Hardening
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_3" type="checkbox" id="__nav_13_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_3">
+          Basics of windows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Basics of windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_3">
+          <span class="md-nav__icon md-icon"></span>
+          Basics of windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics_of_windows/basics_of_windows/" class="md-nav__link">
+        Basics of windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics_of_windows/cmd/" class="md-nav__link">
+        CMD - Windows commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics_of_windows/default_windows_files/" class="md-nav__link">
+        Default windows files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics_of_windows/powershell/" class="md-nav__link">
+        PowerShell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics_of_windows/powershell_scripting2/" class="md-nav__link">
+        Powershell scripting
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_4" type="checkbox" id="__nav_13_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_4">
+          Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_4">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_4_1" type="checkbox" id="__nav_13_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_4_1">
+          Attacking azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Attacking azure" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Attacking azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cloud/attacking_azure/abuse_application_administrator_role/" class="md-nav__link">
+        Abuse application administrator role
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cloud/attacking_azure/abuse_azure_ad_sso/" class="md-nav__link">
+        Abuse azure ad sso
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cloud/attacking_azure/check_for_blobs/" class="md-nav__link">
+        Check for blobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cloud/attacking_azure/check_for_misconfigured_azuread_groups/" class="md-nav__link">
+        Check for misconfigured azuread groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cloud/attacking_azure/check_for_passwords_azure/" class="md-nav__link">
+        Check for passwords azure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cloud/attacking_azure/check_for_sso_enabled_services/" class="md-nav__link">
+        Check for sso enabled services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cloud/attacking_azure/password_hash_syncronization/" class="md-nav__link">
+        Password hash syncronization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cloud/attacking_azure/password_spraying/" class="md-nav__link">
+        Password spraying
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cloud/attacking_azure/passwords_in_active_directory_attribute/" class="md-nav__link">
+        Passwords in active directory attribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cloud/attacking_azure/recon/" class="md-nav__link">
+        Recon
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_5" type="checkbox" id="__nav_13_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_5">
+          Cryptography
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cryptography" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cryptography
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cryptography/client_certificate_tests/" class="md-nav__link">
+        Client certificate tests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_6" type="checkbox" id="__nav_13_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_6">
+          External network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="External network" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_6">
+          <span class="md-nav__icon md-icon"></span>
+          External network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../external_network/attacking_external_networks/" class="md-nav__link">
+        Scanning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_7" type="checkbox" id="__nav_13_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_7">
+          Initial access
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Initial access" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_7">
+          <span class="md-nav__icon md-icon"></span>
+          Initial access
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../initial_access/initial_access/" class="md-nav__link">
+        Initial access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../initial_access/initial_access_dropper/" class="md-nav__link">
+        Initial access dropper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../initial_access/phishing_server/" class="md-nav__link">
+        Phishing server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../initial_access/reverse_shell/" class="md-nav__link">
+        Reverse-shells
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../initial_access/social_engineering_-_phishing/" class="md-nav__link">
+        Social Engineering - Phishing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_8" type="checkbox" id="__nav_13_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_8">
+          Internal network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Internal network" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_8">
+          <span class="md-nav__icon md-icon"></span>
+          Internal network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../internal_network/active_information_gathering/" class="md-nav__link">
+        Active information gathering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../internal_network/arp-spoofing/" class="md-nav__link">
+        Arp-spoofing - Sniffing traffic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../internal_network/basics_of_networking/" class="md-nav__link">
+        Basics of networking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../internal_network/dns_zone_transfer_attack/" class="md-nav__link">
+        DNS Zone Transfer Attack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../internal_network/infrastructure_pentest_scanning_networks/" class="md-nav__link">
+        Infrastructure pentest scanning networks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../internal_network/list_of_common_ports/" class="md-nav__link">
+        Common ports/services and how to use them
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../internal_network/network_attacks/" class="md-nav__link">
+        Network attacks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_9" type="checkbox" id="__nav_13_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_9">
+          Kubernetes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Kubernetes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_9">
+          <span class="md-nav__icon md-icon"></span>
+          Kubernetes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kubernetes/attacking_kubernetes/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kubernetes/attacking_kubernetes_checklist/" class="md-nav__link">
+        Attacking kubernetes checklist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kubernetes/basics_of_docker/" class="md-nav__link">
+        Create image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kubernetes/basics_of_kubernetes/" class="md-nav__link">
+        Basics of kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kubernetes/kubernetes_hacking_tools/" class="md-nav__link">
+        Kubernetes hacking tools
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_10" type="checkbox" id="__nav_13_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_10">
+          Mobile applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mobile applications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_10">
+          <span class="md-nav__icon md-icon"></span>
+          Mobile applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_10_1" type="checkbox" id="__nav_13_10_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_10_1">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Android" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_10_1">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../android_tools/" class="md-nav__link">
+        Android tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../android_vuln_checklist/" class="md-nav__link">
+        Manifest configurations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile_application_setup/" class="md-nav__link">
+        Mobile application setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Mobile application vulnerabilities android
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Mobile application vulnerabilities android
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#check-for-manifest-misconfigurations" class="md-nav__link">
+    Check for manifest misconfigurations
+  </a>
+  
+    <nav class="md-nav" aria-label="Check for manifest misconfigurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allow-backup-set-to-true" class="md-nav__link">
+    Allow backup set to true
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-if-application-is-run-in-debuggable-mode" class="md-nav__link">
+    Check if application is run in debuggable mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-network-security-configurations" class="md-nav__link">
+    Check network security configurations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-permissions" class="md-nav__link">
+    Check permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploiting-application-components" class="md-nav__link">
+    Exploiting application components
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploiting application components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exploiting-exported-activities" class="md-nav__link">
+    Exploiting exported activities
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploiting exported activities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hidden-view" class="md-nav__link">
+    Hidden view
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phishing" class="md-nav__link">
+    Phishing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#injections" class="md-nav__link">
+    Injections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploiting-insecure-content-providers" class="md-nav__link">
+    Exploiting insecure Content Providers
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploiting insecure Content Providers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-content-providers-are-exported" class="md-nav__link">
+    If content providers are exported
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-if-sensitive-information-can-be-accessed" class="md-nav__link">
+    Check if sensitive information can be accessed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-sql-injections" class="md-nav__link">
+    Check for SQL injections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attacking-insecure-services" class="md-nav__link">
+    Attacking Insecure Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attacking-broadcast-receivers" class="md-nav__link">
+    Attacking broadcast receivers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-for-sensitive-information-in-shared_prefs" class="md-nav__link">
+    Check for sensitive information in shared_prefs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-world-readable-files-in-the-app" class="md-nav__link">
+    Check for world readable files in the app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-unencrypted-sensitive-files-in-sql-database" class="md-nav__link">
+    Check for unencrypted sensitive files in SQL database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-sensitive-information-in-external-storage" class="md-nav__link">
+    Check for sensitive information in external storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-for-hardcoded-credentials" class="md-nav__link">
+    Check for hardcoded credentials
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unintended-data-leaks" class="md-nav__link">
+    Unintended data leaks
+  </a>
+  
+    <nav class="md-nav" aria-label="Unintended data leaks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-that-sensitive-data-is-not-logged" class="md-nav__link">
+    Check that sensitive data is not logged
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disallow-copy-paste-for-sensitive-data" class="md-nav__link">
+    Disallow copy-paste for sensitive data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytics-sent-to-third-party" class="md-nav__link">
+    Analytics sent to third party
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-firebase-access-control" class="md-nav__link">
+    Check for Firebase access control
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webview-attacks" class="md-nav__link">
+    Webview attacks
+  </a>
+  
+    <nav class="md-nav" aria-label="Webview attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-that-javascript-is-disabled" class="md-nav__link">
+    Check that javascript is disabled
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    Network security
+  </a>
+  
+    <nav class="md-nav" aria-label="Network security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-for-non-http-traffic" class="md-nav__link">
+    Check for non-http traffic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-unencrypted-http-traffic" class="md-nav__link">
+    Check for unencrypted http traffic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-if-application-verifies-server-certificate" class="md-nav__link">
+    Check if application verifies server certificate
+  </a>
+  
+    <nav class="md-nav" aria-label="Check if application verifies server certificate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify-that-self-signed-certificates-are-not-accepted" class="md-nav__link">
+    Verify that self-signed certificates are not accepted
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-that-correct-hostname-certificates-are-not-accepted" class="md-nav__link">
+    Verify that correct hostname certificates are not accepted
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_10_2" type="checkbox" id="__nav_13_10_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_10_2">
+          Ios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ios" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          Ios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ios/ios_application_vulnerabilities/" class="md-nav__link">
+        Ios application vulnerabilities
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ios/ios_setup/" class="md-nav__link">
+        Pentesting application on iPhone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ios/ios_vuln_checklist/" class="md-nav__link">
+        Ios vuln checklist
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_11" type="checkbox" id="__nav_13_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_11">
+          Password cracking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Password cracking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_11">
+          <span class="md-nav__icon md-icon"></span>
+          Password cracking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../password_cracking/generate_custom_wordlist/" class="md-nav__link">
+        Generate custom wordlist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../password_cracking/generate_password_list/" class="md-nav__link">
+        Generate password list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../password_cracking/offline_password_cracking/" class="md-nav__link">
+        Offline password cracking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../password_cracking/online_password_cracking/" class="md-nav__link">
+        Online password cracking
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_12" type="checkbox" id="__nav_13_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_12">
+          Physical attacks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Physical attacks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_12">
+          <span class="md-nav__icon md-icon"></span>
+          Physical attacks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physical_attacks/physical_access_to_machine/" class="md-nav__link">
+        Physical access to machine
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_13" type="checkbox" id="__nav_13_13" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_13">
+          Post exploitation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Post exploitation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_13">
+          <span class="md-nav__icon md-icon"></span>
+          Post exploitation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../post_exploitation/getting_meterpreter_shell/" class="md-nav__link">
+        Meterpreter shell for post-exploitation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../post_exploitation/privilege_escalation_-_linux/" class="md-nav__link">
+        Privilege Escalation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../post_exploitation/spawning_shells/" class="md-nav__link">
+        Spawning shells
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_14" type="checkbox" id="__nav_13_14" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_14">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_14">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/python_fundamentals/" class="md-nav__link">
+        Python fundamentals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/useful_python_commands/" class="md-nav__link">
+        Useful Scripts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_15" type="checkbox" id="__nav_13_15" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_15">
+          Random tips and tricks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Random tips and tricks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_15">
+          <span class="md-nav__icon md-icon"></span>
+          Random tips and tricks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../random_tips_and_tricks/general_tips/" class="md-nav__link">
+        General tips
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../random_tips_and_tricks/pivoting/" class="md-nav__link">
+        Pivoting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../random_tips_and_tricks/port_forwarding_and_tunneling/" class="md-nav__link">
+        Pivoting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../random_tips_and_tricks/port_knocking/" class="md-nav__link">
+        Port knocking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../random_tips_and_tricks/setuid_c-code/" class="md-nav__link">
+        Setuid c-code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_16" type="checkbox" id="__nav_13_16" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_16">
+          Recon
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Recon" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_16">
+          <span class="md-nav__icon md-icon"></span>
+          Recon
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recon/finding_subdomains/" class="md-nav__link">
+        Find Subdomains
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recon/google_hacking/" class="md-nav__link">
+        Search Engine Discovery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recon/passive_information_gathering/" class="md-nav__link">
+        Passive information gathering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recon/port_scanning/" class="md-nav__link">
+        Port Scanning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_17" type="checkbox" id="__nav_13_17" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_17">
+          Rfid cards
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rfid cards" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_17">
+          <span class="md-nav__icon md-icon"></span>
+          Rfid cards
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rfid_cards/basics_of_rfid_hacking/" class="md-nav__link">
+        Basics of rfid hacking
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_18" type="checkbox" id="__nav_13_18" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_18">
+          Thick client
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Thick client" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_18">
+          <span class="md-nav__icon md-icon"></span>
+          Thick client
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thick_client/attacking_thick_client/" class="md-nav__link">
+        Attacking thick client
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_19" type="checkbox" id="__nav_13_19" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_19">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tools" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_19">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/gdb/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/webshell/" class="md-nav__link">
+        Webshell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/wget/" class="md-nav__link">
+        wget
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/wireshark/" class="md-nav__link">
+        Wireshark
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_20" type="checkbox" id="__nav_13_20" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_20">
+          Transferring files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transferring files" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_20">
+          <span class="md-nav__icon md-icon"></span>
+          Transferring files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../transferring_files/transfering_files/" class="md-nav__link">
+        Transferring Files to Windows
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_21" type="checkbox" id="__nav_13_21" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_21">
+          Web applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web applications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_21">
+          <span class="md-nav__icon md-icon"></span>
+          Web applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/bankid_attacks/" class="md-nav__link">
+        Bankid attacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/bypass_image_upload/" class="md-nav__link">
+        Bypass File Upload Filtering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/cache_poisoning/" class="md-nav__link">
+        Cache poisoning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/cross-site-scripting/" class="md-nav__link">
+        Cross-site-scripting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/cross_site_request_forgery/" class="md-nav__link">
+        Cross Site Request Forgery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/cross_site_web_socket_hijack/" class="md-nav__link">
+        Cross site web socket hijack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/csv_injection/" class="md-nav__link">
+        Csv injection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/deserialization_attacks/" class="md-nav__link">
+        Deserialization attacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/dom_based_xss/" class="md-nav__link">
+        Dom based xss
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/host-header-attack/" class="md-nav__link">
+        Host Header Attack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/local_file_inclusion/" class="md-nav__link">
+        Local File Inclusion (LFI)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/nosql-injections/" class="md-nav__link">
+        Nosql-injections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/oauth_attacks/" class="md-nav__link">
+        Oauth attacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/remote_file_inclusion/" class="md-nav__link">
+        Remote File Inclusion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/session-fixation/" class="md-nav__link">
+        Session fixation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/sql-injections/" class="md-nav__link">
+        SQL-injections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/static_analysis_of_javascript/" class="md-nav__link">
+        Static analysis of javascript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/subdomain_takeover/" class="md-nav__link">
+        Subdomain Takeover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/web-scanning/" class="md-nav__link">
+        Find hidden files and directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web_applications/xml_external_entity_attack/" class="md-nav__link">
+        XML External Entity Attack
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_22" type="checkbox" id="__nav_13_22" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_22">
+          Wifi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Wifi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_22">
+          <span class="md-nav__icon md-icon"></span>
+          Wifi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wifi/wifi/" class="md-nav__link">
+        Wifi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wifi/wifi_network_segmentation/" class="md-nav__link">
+        Wifi network segmentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#check-for-manifest-misconfigurations" class="md-nav__link">
+    Check for manifest misconfigurations
+  </a>
+  
+    <nav class="md-nav" aria-label="Check for manifest misconfigurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allow-backup-set-to-true" class="md-nav__link">
+    Allow backup set to true
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-if-application-is-run-in-debuggable-mode" class="md-nav__link">
+    Check if application is run in debuggable mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-network-security-configurations" class="md-nav__link">
+    Check network security configurations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-permissions" class="md-nav__link">
+    Check permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploiting-application-components" class="md-nav__link">
+    Exploiting application components
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploiting application components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exploiting-exported-activities" class="md-nav__link">
+    Exploiting exported activities
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploiting exported activities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hidden-view" class="md-nav__link">
+    Hidden view
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phishing" class="md-nav__link">
+    Phishing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#injections" class="md-nav__link">
+    Injections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploiting-insecure-content-providers" class="md-nav__link">
+    Exploiting insecure Content Providers
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploiting insecure Content Providers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-content-providers-are-exported" class="md-nav__link">
+    If content providers are exported
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-if-sensitive-information-can-be-accessed" class="md-nav__link">
+    Check if sensitive information can be accessed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-sql-injections" class="md-nav__link">
+    Check for SQL injections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attacking-insecure-services" class="md-nav__link">
+    Attacking Insecure Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attacking-broadcast-receivers" class="md-nav__link">
+    Attacking broadcast receivers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-for-sensitive-information-in-shared_prefs" class="md-nav__link">
+    Check for sensitive information in shared_prefs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-world-readable-files-in-the-app" class="md-nav__link">
+    Check for world readable files in the app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-unencrypted-sensitive-files-in-sql-database" class="md-nav__link">
+    Check for unencrypted sensitive files in SQL database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-sensitive-information-in-external-storage" class="md-nav__link">
+    Check for sensitive information in external storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-for-hardcoded-credentials" class="md-nav__link">
+    Check for hardcoded credentials
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unintended-data-leaks" class="md-nav__link">
+    Unintended data leaks
+  </a>
+  
+    <nav class="md-nav" aria-label="Unintended data leaks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-that-sensitive-data-is-not-logged" class="md-nav__link">
+    Check that sensitive data is not logged
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disallow-copy-paste-for-sensitive-data" class="md-nav__link">
+    Disallow copy-paste for sensitive data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytics-sent-to-third-party" class="md-nav__link">
+    Analytics sent to third party
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-firebase-access-control" class="md-nav__link">
+    Check for Firebase access control
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webview-attacks" class="md-nav__link">
+    Webview attacks
+  </a>
+  
+    <nav class="md-nav" aria-label="Webview attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-that-javascript-is-disabled" class="md-nav__link">
+    Check that javascript is disabled
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    Network security
+  </a>
+  
+    <nav class="md-nav" aria-label="Network security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-for-non-http-traffic" class="md-nav__link">
+    Check for non-http traffic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-for-unencrypted-http-traffic" class="md-nav__link">
+    Check for unencrypted http traffic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-if-application-verifies-server-certificate" class="md-nav__link">
+    Check if application verifies server certificate
+  </a>
+  
+    <nav class="md-nav" aria-label="Check if application verifies server certificate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify-that-self-signed-certificates-are-not-accepted" class="md-nav__link">
+    Verify that self-signed certificates are not accepted
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-that-correct-hostname-certificates-are-not-accepted" class="md-nav__link">
+    Verify that correct hostname certificates are not accepted
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/julianhal/notes/edit/master/docs/security_notes/mobile_applications/android/mobile_application_vulnerabilities_android.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+  <h1>Mobile application vulnerabilities android</h1>
+
+<h2 id="check-for-manifest-misconfigurations">Check for manifest misconfigurations<a class="headerlink" href="#check-for-manifest-misconfigurations" title="Permanent link">#</a></h2>
+<p>To read the manifest file and other files and assets you can use:</p>
+<pre><code>sudo aptitude install apktool
+apktool d blabla.apk
+cd res/xml
+</code></pre>
+<h3 id="allow-backup-set-to-true">Allow backup set to true<a class="headerlink" href="#allow-backup-set-to-true" title="Permanent link">#</a></h3>
+<p>In the manifest file it is possible to specify if it should be possible to backup the application data, if the user has usb debugging enabled. Applications that store sensitive data on disk should have this set to false:</p>
+<p>Check for the following in the manifest file:</p>
+<pre><code class="language-xml">android:allowBackup=&quot;false&quot;
+</code></pre>
+<p>If backup is allowed you can backup the data like this:</p>
+<pre><code>adb backup -apk com.theapp.blabla
+</code></pre>
+<pre><code class="language-bash">sudo aptitude install qpdf #this is where zlib-flate is found
+dd if=backup.ab bs=24 skip=1 | zlib-flate -uncompress &gt; res.tar
+tar xvf res.tar
+</code></pre>
+<h3 id="check-if-application-is-run-in-debuggable-mode">Check if application is run in debuggable mode<a class="headerlink" href="#check-if-application-is-run-in-debuggable-mode" title="Permanent link">#</a></h3>
+<p>If the application is configured to run in debuggable mode the following will be set in the manifest file.</p>
+<pre><code>&lt;application debuggable=&quot;true&quot;
+</code></pre>
+<p>It can also be checked with drozer with:</p>
+<pre><code>run app.package.debuggable
+</code></pre>
+<h3 id="check-network-security-configurations">Check network security configurations<a class="headerlink" href="#check-network-security-configurations" title="Permanent link">#</a></h3>
+<p>Cleartexttraffic is set to false by default in android 9.</p>
+<p>Network traffic configuration is set in the manifest-file.</p>
+<p>If you see this in the manifest-file it means that the configurations are made in the network-security file.</p>
+<pre><code>android:networkSecurityConfig=&quot;@xml/network_security_config&quot;
+</code></pre>
+<p>The network-security file is found in <code>res/xml/network_security_config.xml</code>.</p>
+<p>Check if <code>domain-config cleartextTrafficPermitted="true"</code> is set to true, and to what domain it is allowed.</p>
+<h2 id="check-permissions">Check permissions<a class="headerlink" href="#check-permissions" title="Permanent link">#</a></h2>
+<p>If the application has to wide permissions it might be a concern for privacy, but usually not a vulnerability or risk to the application itself.</p>
+<p>Check permissions i the manifest file or with Drozer.</p>
+<p>Drozer command:</p>
+<pre><code>run app.package.info -a com.yourapp.blabla
+</code></pre>
+<p>There is no general right or wrong. Are the permissions correct in relation to what the application is doing?</p>
+<p>Some a universally dangerous permissions, like the following.</p>
+<p>There is not many legitimate reasons to allow an app to install other packages.</p>
+<pre><code>android.permissions.INSTALL_PACKAGES
+</code></pre>
+<p>Each permission has a android-defined permissions level: <code>normal</code>, <code>dangerous</code> and <code>signature</code>.</p>
+<p>https://developer.android.com/guide/topics/permissions/overview#normal-dangerous</p>
+<p>If a permission is defined as "dangerous", such as reading contacts. The user must explicitly agree to the permission for it to be active.</p>
+<h2 id="exploiting-application-components">Exploiting application components<a class="headerlink" href="#exploiting-application-components" title="Permanent link">#</a></h2>
+<p>There are four types of "components" in an android applications:
+- Activity - screens/views
+- Content provider - database objects
+- Services - background workers
+- Broadcast receiver</p>
+<p>Three of these four components are activated using asynchronous messages called "intents". The components that are activated using intents are <code>activity</code>, <code>services</code>, and <code>broadcast receivers</code></p>
+<p>If a component is exported or not is defined in the <code>manifest.xml</code> file.</p>
+<p>You can map the attacksurface of the components using these drozer commands</p>
+<pre><code>run app.package.list
+
+run app.package.attacksurface app.theapp
+</code></pre>
+<h3 id="exploiting-exported-activities">Exploiting exported activities<a class="headerlink" href="#exploiting-exported-activities" title="Permanent link">#</a></h3>
+<p>What is an intent?</p>
+<p>"An Intent provides a facility for performing late runtime binding between the code in different applications. Its most significant use is in the launching of activities, where it can be thought of as the glue between activities. It is basically a passive data structure holding an abstract description of an action to be performed."</p>
+<p>A good explanation of how this attack works is here: https://appsec-labs.com/portal/hacking-android-apps-through-exposed-components/</p>
+<p>Activities that are specified as "exported" in the manifest file can be run by other applications on the phone. In a sense, the other application is just running a function on the victim-application. What that function does depends on the application. The Activities might just start a new view. But they may also include arguments.</p>
+<p>Look for activities that are exported and allows arguments.</p>
+<pre><code>.getExtras
+</code></pre>
+<p>To check which activitites are exported run:</p>
+<pre><code>run app.package.list
+run app.package.attacksurface com.appen.blabla
+
+Attack Surface:
+  2 activities exported
+  2 broadcast receivers exported
+  0 content providers exported
+  2 services exported
+
+</code></pre>
+<p>Now you want to check which activities those are:</p>
+<pre><code>run app.activity.info -a com.appen.blabla
+</code></pre>
+<pre><code>run app.activity.start --component com.mwr.example.sieve com.mwr.example.sieve.PWList
+</code></pre>
+<h4 id="hidden-view">Hidden view<a class="headerlink" href="#hidden-view" title="Permanent link">#</a></h4>
+<p>There might be hidden functionality in the application, than can be accessed by a user, using adb or drozer. It might be the case that only premium users should be able to access certain functionality. ANd that functionality is accessible in the application, but there is no backend checks. So a user would be able to use the free version, but access functionality that should only be accessible to premium users. </p>
+<p>Check for:</p>
+<p>List the activities, and test them. Do they expose functionality that should not be accessible to the user.</p>
+<pre><code>run app.activity.info -a com.theapp.blabla
+</code></pre>
+<h4 id="phishing">Phishing<a class="headerlink" href="#phishing" title="Permanent link">#</a></h4>
+<p>Check if an activity that is exported, and therefore can be started by other applications, can be used in some kind of phishing-attack. The idea would be to create a fake application, that does something, and then open up the activity of the victim-application, thereby tricking the victim into inserting data into that view.</p>
+<p>Check for by starting the different views and see if any can be used in phishing attacks.</p>
+<pre><code>run app.activity.info -a com.theapp.blabla
+</code></pre>
+<h4 id="injections">Injections<a class="headerlink" href="#injections" title="Permanent link">#</a></h4>
+<p>Activities can be configured to accept arguments. This means that a malicious application could start the activity and also insert arguments that might be processed in some way. An activity is just an event, and can be programmed to do whatever, so you will need to review the source-code of the activity in order to see if it takes arguments, and in that case see how the argument is processed. Maybe the argument is used to access an sql-database on the phone, or something else like that.</p>
+<p>Activities that have arguments use the <code>getExtras()</code> function. So search the source-code for <code>getExtras</code>, and see if it is used with any of the exported activities. You can also look for <code>getStringExtra()</code>.</p>
+<p>If you find one you can use it like this:</p>
+<pre><code>dz&gt; run app.activity.start --component  app.theapp.dev app.theapp.core.main.theactivity --extra string aaaaa bbb
+</code></pre>
+<h3 id="exploiting-insecure-content-providers">Exploiting insecure Content Providers<a class="headerlink" href="#exploiting-insecure-content-providers" title="Permanent link">#</a></h3>
+<p>Content providers are interfaces for sharing data between applications. Each content provider has en url that looks something like this <code>content://</code>. Other applications can use the content provider to query information. They can use functions like <code>insert()</code>, <code>query()</code>, and <code>update()</code> to access data in another application. If this is configured incorrectly another application could possibly access sensitive data from the application.</p>
+<p>The data might be a file written to the disk, or it might be written to a database, or some other persistent storage.</p>
+<h4 id="if-content-providers-are-exported">If content providers are exported<a class="headerlink" href="#if-content-providers-are-exported" title="Permanent link">#</a></h4>
+<p>Again content providers that are exported means that they are exposed to other applications. So, in order to map the exported content providers you can look in the manifest file or check it using drozer. With drozer it looks like this:</p>
+<pre><code>run app.package.attacksurface app.theapp
+</code></pre>
+<p>If you find that there are some content providers that are exported you can get more info on them with this command:</p>
+<pre><code>run app.provider.info -a app.theapp
+</code></pre>
+<p>To list all providers, even the content providers that other application can't access you add the <code>-u</code> flag.</p>
+<pre><code>run app.provider.info -a app.theapp -u
+</code></pre>
+<h4 id="check-if-sensitive-information-can-be-accessed">Check if sensitive information can be accessed<a class="headerlink" href="#check-if-sensitive-information-can-be-accessed" title="Permanent link">#</a></h4>
+<p>Check for uri paths:</p>
+<pre><code>run app.provider.finduri com.appen.blabla
+</code></pre>
+<p>If you find some content providers that are exported you can query those and see if you can access some sensitive information. This can be done like this:</p>
+<pre><code>run app.provider.query content://com.theapp.uripath/
+</code></pre>
+<h4 id="check-for-sql-injections">Check for SQL injections<a class="headerlink" href="#check-for-sql-injections" title="Permanent link">#</a></h4>
+<p>Content providers are sometimes connected to a SQLite database.</p>
+<p>Check out <a href="this">https://solidgeargroup.com/en/sql-injection-in-content-providers-of-android-and-how-to-be-protected/</a> resources how to check for this and exploit.</p>
+<h3 id="attacking-insecure-services">Attacking Insecure Services<a class="headerlink" href="#attacking-insecure-services" title="Permanent link">#</a></h3>
+<p>A services is a component that is running in the background to perform long-running operations or to perform work for remote processes.</p>
+<p>A service might play music in the background while the user is in a different application. Or it might access data over the network while the user is doing something else. There are three different types of services <code>scheduled</code>, <code>started</code>, and <code>bound</code>.</p>
+<p>The services are listed in the manifest file, it looks something like this in the manifest: </p>
+<pre><code class="language-xml">&lt;service android: name=”.Example Service” /&gt;
+</code></pre>
+<pre><code>run app.service.info -a com.theapp.blabla
+</code></pre>
+<p>You can run a service like this:</p>
+<pre><code>run app.service.start --action com.theapp.blabla.somService --component com.theapp.blabla com.theapp.blabla.somService
+</code></pre>
+<p>https://book.hacktricks.xyz/mobile-apps-pentesting/android-app-pentesting/drozer-tutorial</p>
+<h3 id="attacking-broadcast-receivers">Attacking broadcast receivers<a class="headerlink" href="#attacking-broadcast-receivers" title="Permanent link">#</a></h3>
+<p>Applications can register broadcast receivers, this will allow them to be able to receive broadcast from the OS or from other applications. It is like a publish-subscribe pattern. If an application registers to receive a specific broadcast the system till route traffic to that application when such a broadcast is published. </p>
+<h2 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">#</a></h2>
+<p>Data can be stored in multiple ways in an android device. For example:</p>
+<ul>
+<li>Shared Preferences</li>
+<li>SQLite Databases</li>
+<li>Realm Databases</li>
+<li>Internal Storage</li>
+<li>External Storage</li>
+</ul>
+<h3 id="check-for-sensitive-information-in-shared_prefs">Check for sensitive information in shared_prefs<a class="headerlink" href="#check-for-sensitive-information-in-shared_prefs" title="Permanent link">#</a></h3>
+<p>The SharedPreferences API is commonly used to permanently save small collections of key-value pairs. Data stored in a SharedPreferences object is written to a plain-text XML file. The SharedPreferences object can be declared world-readable (accessible to all apps) or private. Misuse of the SharedPreferences API can often lead to exposure of sensitive data.</p>
+<p>Check the following file to see if sensitive data (like passwords or tokens) are stored in it.</p>
+<pre><code>/data/data/&lt;package-name&gt;/shared_prefs/key.xml
+</code></pre>
+<h3 id="check-for-world-readable-files-in-the-app">Check for world readable files in the app<a class="headerlink" href="#check-for-world-readable-files-in-the-app" title="Permanent link">#</a></h3>
+<p>Maybe som files on the application for some reason has received incorrect filepermissions, drozer can find those:</p>
+<pre><code>run scanner.misc.readablefiles /data/data/com.theapp.blabla
+</code></pre>
+<p>Or you can go to the app:</p>
+<pre><code>ls -la /data/data/app.theapp.blabla/shared_prefs
+
+And look for
+-rw-rw-r-- 
+</code></pre>
+<p>From the owasp guide:
+"Please note that <code>MODE_WORLD_READABLE</code> and <code>MODE_WORLD_WRITEABLE</code> were deprecated starting on API level 17. Although newer devices may not be affected by this, applications compiled with an android:targetSdkVersion value less than 17 may be affected if they run on an OS version that was released before Android 4.2 (API level 17)."</p>
+<h3 id="check-for-unencrypted-sensitive-files-in-sql-database">Check for unencrypted sensitive files in SQL database<a class="headerlink" href="#check-for-unencrypted-sensitive-files-in-sql-database" title="Permanent link">#</a></h3>
+<p>Databases are stored in <code>/data/data/[packeage name]/databases/</code>.</p>
+<p>You can usually not pull them down using adb directory with <code>pull</code> because you need to be root. So instead you can move the data to sdcard.</p>
+<pre><code>adb shell
+mkdir /sdcard/exfil
+cp /data/data/[packeage name]/databases/* /sdcard/exfil
+
+adb pull /sdcard/exfil
+</code></pre>
+<pre><code>sudo aptitude install sqlite
+
+sqlite3 database.db
+.dump
+</code></pre>
+<h3 id="check-for-sensitive-information-in-external-storage">Check for sensitive information in external storage<a class="headerlink" href="#check-for-sensitive-information-in-external-storage" title="Permanent link">#</a></h3>
+<p>External storage are storage that may be removable, such as an sdcard, or built in. These storages are world reaible. So if the application stores data here any other application can read that data.</p>
+<p>Also, files stored outside of the <code>/data/data/[package name]/</code> are not removed if the application is uninstalled.</p>
+<h3 id="_1"><a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
+<p>How are creds stored?</p>
+<p>Connect your device to to your pentest-vm. Install ADB.</p>
+<p>Run</p>
+<pre><code>adb shell
+To become root:
+su
+</code></pre>
+<p>Now you can go to /data/data/com.yourappliucation.test</p>
+<p>Check </p>
+<h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">#</a></h2>
+<h3 id="check-for-hardcoded-credentials">Check for hardcoded credentials<a class="headerlink" href="#check-for-hardcoded-credentials" title="Permanent link">#</a></h3>
+<p>Check for strings.
+MobSF lists all strings.</p>
+<h2 id="unintended-data-leaks">Unintended data leaks<a class="headerlink" href="#unintended-data-leaks" title="Permanent link">#</a></h2>
+<h3 id="check-that-sensitive-data-is-not-logged">Check that sensitive data is not logged<a class="headerlink" href="#check-that-sensitive-data-is-not-logged" title="Permanent link">#</a></h3>
+<p>Use adb and get a shell. Run <code>logcat</code> as root. And then use the applicaiton, do you see passwords, tokens, or other sensitive data?</p>
+<p>You can also check the source code for logs.</p>
+<h3 id="disallow-copy-paste-for-sensitive-data">Disallow copy-paste for sensitive data<a class="headerlink" href="#disallow-copy-paste-for-sensitive-data" title="Permanent link">#</a></h3>
+<p>The clipboard can be accessed by all applications on the phone. It should not be possible to copy data that is considered sensitive, as that might leak to other applications. </p>
+<h3 id="analytics-sent-to-third-party">Analytics sent to third party<a class="headerlink" href="#analytics-sent-to-third-party" title="Permanent link">#</a></h3>
+<p>Check that sensitive data is not leaked to third parties</p>
+<h3 id="check-for-firebase-access-control">Check for Firebase access control<a class="headerlink" href="#check-for-firebase-access-control" title="Permanent link">#</a></h3>
+<p>Look for a string looking like this <code>somethingsomething.firebaseio.com</code>. Check if you can access sensitive data in:
+ <code>somethingsomething.firebaseio.com/.json</code></p>
+<h2 id="webview-attacks">Webview attacks<a class="headerlink" href="#webview-attacks" title="Permanent link">#</a></h2>
+<h3 id="check-that-javascript-is-disabled">Check that javascript is disabled<a class="headerlink" href="#check-that-javascript-is-disabled" title="Permanent link">#</a></h3>
+<p>Javascript is disabled by default. But can be enabled with:</p>
+<pre><code>setJavaScriptEnabled() 
+</code></pre>
+<h2 id="network-security">Network security<a class="headerlink" href="#network-security" title="Permanent link">#</a></h2>
+<h3 id="check-for-non-http-traffic">Check for non-http traffic<a class="headerlink" href="#check-for-non-http-traffic" title="Permanent link">#</a></h3>
+<p>When the device is on your access-point, run wireshark and dump its traffic. Do you see anything unusual that might indicate that the application is communicating over non-http?</p>
+<h3 id="check-for-unencrypted-http-traffic">Check for unencrypted http traffic<a class="headerlink" href="#check-for-unencrypted-http-traffic" title="Permanent link">#</a></h3>
+<p>Use the application. Check in burk or wireshark that no non-tls-traffic is sent.</p>
+<h3 id="check-if-application-verifies-server-certificate">Check if application verifies server certificate<a class="headerlink" href="#check-if-application-verifies-server-certificate" title="Permanent link">#</a></h3>
+<p>Two key issues need to be verified.
+- That the application verifies that the server certificate comes from a trusted CA
+- Determine weather the endpoint server presents a the right certificate</p>
+<pre><code>openssl s_client -proxy localhost:8080 -connect google.com:443 -showcerts
+</code></pre>
+<h4 id="verify-that-self-signed-certificates-are-not-accepted">Verify that self-signed certificates are not accepted<a class="headerlink" href="#verify-that-self-signed-certificates-are-not-accepted" title="Permanent link">#</a></h4>
+<p>In burp go to <code>Proxy / Options / Proxy Listener / Edit / Certificate / Use Self signed certificate</code>
+Then try to use the application, if the application is still working and you see requests going through then the application is not checking the servers certificate.</p>
+<h3 id="verify-that-correct-hostname-certificates-are-not-accepted">Verify that correct hostname certificates are not accepted<a class="headerlink" href="#verify-that-correct-hostname-certificates-are-not-accepted" title="Permanent link">#</a></h3>
+<p>It might be that the developers made the application check for a specific hostname in the CN-field in the server certificate, but nothing else</p>
+<p>This can be done automatically using burp if you go to <code>Proxy / Options / Proxy Listener / Edit / Certificate / Generate CA Signed certificate with specific hostname</code>
+HOWEVER, this will make burp generate a certificate from the CA portswigger, so if you have already installed your portswigger root certificate in your mobile phone the phone will trust your certificate. Which of course is by design and not an issue. So only use the burp method if you have removed the burp CA in your phone.</p>
+<p>Otherwise you can just generate your own certificate, with this oneline. Remember to put in the correct CN (Common name), it should be the common-name that is the same as the one that the legitimate server presents.</p>
+<pre><code>openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out certificate.pem
+</code></pre>
+<p>Check how your certificate came out with this command:</p>
+<pre><code>openssl x509 -text -noout -in certificate.pem
+</code></pre>
+<p>Now you have to combine your private key with your public certificate. The archive/format for this is pkcs12. And the combined archive can be create using the following command:</p>
+<pre><code>openssl pkcs12 -inkey key.pem -in certificate.pem -export -out certificate.p12
+
+</code></pre>
+<p>Set a password</p>
+<p>Now go to  Burp <code>Proxy / Options / Proxy Listener / Edit / Certificate / Use a Custom Certificate</code>
+Add your pkcs12 formatted certificate and key, insert the password. Rememer, the private key is used to decrypt the traffic. Without </p>
+<p>Check that you have actaully done everything right and download the certificate</p>
+<pre><code>openssl s_client -proxy localhost:8080 -connect PAGEYOURARETESTING.com:443 -showcerts
+</code></pre>
+<p>Now use the application and see if it works. If you can see the traffic it means the mobile application accepts your crappy self-generated certificate, and ca therefore be performed by an attacker.</p>
+<p>If the application does not work, it does not send any requests through burp, everything is working as it should.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
+<p>https://labs.f-secure.com/assets/BlogFiles/mwri-drozer-user-guide-2015-03-23.pdf</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../mobile_application_setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mobile application setup" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Mobile application setup
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../ios/ios_application_vulnerabilities/" class="md-footer__link md-footer__link--next" aria-label="Next: Ios application vulnerabilities" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Ios application vulnerabilities
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": "v1.0.0"}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>

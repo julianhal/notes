@@ -1,0 +1,7798 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Infosec-Notes">
+      
+      
+        <meta name="author" content="julianhal">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Windows 7 Enterprise - Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#windows-7-enterprise" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Notes" class="md-header__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Windows 7 Enterprise
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/julianhal/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Notes" class="md-nav__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/julianhal/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          0 basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="0 basics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          0 basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0-basics/1-network-basics/" class="md-nav__link">
+        network basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0-basics/2-metasploit-basics/" class="md-nav__link">
+        metasploit basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Basics of linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Basics of linux" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Basics of linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0-basics/basics_of_linux/bash_scripting/" class="md-nav__link">
+        Bash-scripting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0-basics/basics_of_linux/basics_of_linux/" class="md-nav__link">
+        Basics of linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0-basics/basics_of_linux/common_devices_and_components/" class="md-nav__link">
+        Load balancer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0-basics/basics_of_linux/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0-basics/basics_of_linux/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          1 recon enum
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1 recon enum" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          1 recon enum
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1-recon-enum/1-0-passive-recon/" class="md-nav__link">
+        passive recon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1-recon-enum/1-1-port-scanning-server-side-enumeration/" class="md-nav__link">
+        PORT SCANNING
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1-recon-enum/1-3-common-ports/" class="md-nav__link">
+        COMMON PORTS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1-recon-enum/1_recon_and_enumeration/" class="md-nav__link">
+        Chapter 2 - Recon & Enumeration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          2 web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2 web" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          2 web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-web/0-initial-enumeration/" class="md-nav__link">
+        initial methodology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-web/LFI-RFI/" class="md-nav__link">
+        Local and Remote file inclusion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-web/cms/" class="md-nav__link">
+        CMSs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-web/command-injection/" class="md-nav__link">
+        command injection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-web/csrf/" class="md-nav__link">
+        CSRF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-web/sqli/" class="md-nav__link">
+        SQL Injections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-web/ssl/" class="md-nav__link">
+        ssl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-web/ssrf/" class="md-nav__link">
+        ssrf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-web/upload-bypass/" class="md-nav__link">
+        upload-bypass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-web/verb-tampering/" class="md-nav__link">
+        verb tampering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-web/xee/" class="md-nav__link">
+        XXE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-web/xss/" class="md-nav__link">
+        XSS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          3 Exploiting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3 Exploiting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          3 Exploiting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-Exploiting/0_exploiting_vulnerabilities/" class="md-nav__link">
+        Chapter 3 - Exploiting Vulnerabilities
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-Exploiting/1-webshells/" class="md-nav__link">
+        webshells
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-Exploiting/2-shellcodes-compiling-deploying/" class="md-nav__link">
+        shellcodes , compiling and deploying
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-Exploiting/3-bypassing-AV/" class="md-nav__link">
+        bypassing AV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-Exploiting/4-databases/" class="md-nav__link">
+        databases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-Exploiting/6-reverse-shells/" class="md-nav__link">
+        Reverse Shells
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-Exploiting/7_exploit_development/" class="md-nav__link">
+        Chapter 6 - Exploit Development
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          4 win privesc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="4 win privesc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          4 win privesc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0_windows_post_exploitation/" class="md-nav__link">
+        Chapter 4 - Windows Post-Exploitation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-initial/" class="md-nav__link">
+        initial
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-always-install-elevated/" class="md-nav__link">
+        always install elevated
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-secondary-logon-ms16-032/" class="md-nav__link">
+        secondary logon handle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-insecure-registry/" class="md-nav__link">
+        insecure registry permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-intel-sysret/" class="md-nav__link">
+        intel sysret
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-runas/" class="md-nav__link">
+        runas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-LFI-FILES/" class="md-nav__link">
+        LFI files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../16-UAC/" class="md-nav__link">
+        UAC bypass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../17-llmnr/" class="md-nav__link">
+        LLMNR and NBT-NS poisoning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-stored-credentials/" class="md-nav__link">
+        stored credentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-kernel/" class="md-nav__link">
+        Kernel Vulns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-dll-injection/" class="md-nav__link">
+        DLL Injection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-weak-service-permissions/" class="md-nav__link">
+        weak services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-dll-hijacking/" class="md-nav__link">
+        DLL hijacking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-potato/" class="md-nav__link">
+        POTATOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-group-policies-preferences/" class="md-nav__link">
+        group policy preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9-unquoted-service-path/" class="md-nav__link">
+        unquoted service path
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_19" type="checkbox" id="__nav_6_19" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_19">
+          CLSIDs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CLSIDs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_19">
+          <span class="md-nav__icon md-icon"></span>
+          CLSIDs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Windows%2010%20Enterprise/" class="md-nav__link">
+        Windows 10 Enterprise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Windows%20Server%202008%20R2%20Enterprise/" class="md-nav__link">
+        Windows Server 2008 R2 Enterprise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Windows%20Server%202012%20Datacenter/" class="md-nav__link">
+        Windows Server 2012 Datacenter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Windows%20Server%202016%20Standard/" class="md-nav__link">
+        Windows Server 2016 Standard
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Windows-8-1-Enterprise/" class="md-nav__link">
+        Windows 8.1 Enterprise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows%2010%20pro/" class="md-nav__link">
+        Windows 10 Pro |
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Windows 7 Enterprise
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          5 linux privesc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="5 linux privesc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          5 linux privesc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-linux-privesc/4-2-linux-privesc/" class="md-nav__link">
+        linux privesc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-linux-privesc/lin-security/" class="md-nav__link">
+        lin-security + GTFO bins
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          6 post exploitation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="6 post exploitation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          6 post exploitation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-post-exploitation/4-0-windows-file-transfer/" class="md-nav__link">
+        windows file transfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-post-exploitation/4-3-passwords%2Bhash_attacks/" class="md-nav__link">
+        passwords attacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-post-exploitation/4.4-pivoting%2Btunneling/" class="md-nav__link">
+        pivoting+tunneling
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          7 misc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="7 misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          7 misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../7-misc/0_misc/" class="md-nav__link">
+        Chapter 9 - Miscellaneous
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../7-misc/tips/" class="md-nav__link">
+        tips
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          8 Cracking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="8 Cracking" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          8 Cracking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../8-Cracking/0_cracking/" class="md-nav__link">
+        0 cracking
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          9 binexp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="9 binexp" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          9 binexp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-binexp/0_reverse%20_engineering/" class="md-nav__link">
+        Chapter 8 - Reverse Engineering
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Cheatsheets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheatsheets" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Cheatsheets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cheatsheets/0_Links/" class="md-nav__link">
+        Links
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cheatsheets/0_various_cheatsheets/" class="md-nav__link">
+        Various cheatsheets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cheatsheets/msfvenom/" class="md-nav__link">
+        msfvenom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cheatsheets/nmap/" class="md-nav__link">
+        nmap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cheatsheets/powershell/" class="md-nav__link">
+        powershell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cheatsheets/tmux/" class="md-nav__link">
+        tmux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13">
+          Security notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Security notes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Security notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1" type="checkbox" id="__nav_13_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1">
+          Active directory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Active directory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_1">
+          <span class="md-nav__icon md-icon"></span>
+          Active directory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/attacking_windows_domain_domain_trust/" class="md-nav__link">
+        Attacking windows domain domain trust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/attacking_windows_domain_local_privilege_escalation/" class="md-nav__link">
+        Privilege Escalation Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/domain_privilege_escalation_checklist/" class="md-nav__link">
+        Domain privilege escalation checklist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_4" type="checkbox" id="__nav_13_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_4">
+          Active directory privilege escalation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Active directory privilege escalation" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Active directory privilege escalation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/abusing_constrained_delegation/" class="md-nav__link">
+        Abusing constrained delegation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/abusing_unconstrained_delegation/" class="md-nav__link">
+        Abusing unconstrained delegation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/aseproasting/" class="md-nav__link">
+        Aseproasting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/check_for_insecure_usage_of_high_privileged_accounts/" class="md-nav__link">
+        Check for insecure usage of high privileged accounts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/check_for_local_admin_privileges/" class="md-nav__link">
+        Check for local admin privileges
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/check_for_lockout_threshold/" class="md-nav__link">
+        Check for lockout threshold
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/check_for_misconfgured_access_control_of_mssql/" class="md-nav__link">
+        Check for misconfgured access control of mssql
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/check_for_misconfigured_gpo/" class="md-nav__link">
+        Check for misconfigured gpo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/check_for_misconfigured_laps/" class="md-nav__link">
+        Check for misconfigured laps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/check_for_reuse_of_local_admin_password/" class="md-nav__link">
+        Check for reuse of local admin password
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/check_for_scripts_on_sysvol/" class="md-nav__link">
+        Check for scripts on sysvol
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/check_for_unsupported_os/" class="md-nav__link">
+        Check for unsupported os
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/check_for_writable_executables_on_shares/" class="md-nav__link">
+        Check for writable executables on shares
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/credential_extraction/" class="md-nav__link">
+        Credential Extraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/execssive_amount_of_domain_admins/" class="md-nav__link">
+        Execssive amount of domain admins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/incorrectly_configured_forest_or_domain_trust/" class="md-nav__link">
+        Incorrectly configured forest or domain trust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/kerberoasting/" class="md-nav__link">
+        Kerberoasting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/misconfigured_access_control_lists/" class="md-nav__link">
+        Misconfigured access control lists
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/misconfigured_read_only_domain_controller/" class="md-nav__link">
+        Misconfigured read only domain controller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/ntlm_relaying_and_theft/" class="md-nav__link">
+        Ntlm relaying and theft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/passwords_in_active_directory_attributes/" class="md-nav__link">
+        Passwords in active directory attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/passwords_in_group_policy_preferences/" class="md-nav__link">
+        Passwords in group policy preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/smb_shares_mining/" class="md-nav__link">
+        Smb shares mining
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/active_directory_privilege_escalation/template/" class="md-nav__link">
+        Template
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_5" type="checkbox" id="__nav_13_1_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_5">
+          Cracking hashes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cracking hashes" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cracking hashes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/cracking_hashes/cracking_hashes/" class="md-nav__link">
+        Cracking hashes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/cracking_hashes/generate_password_list/" class="md-nav__link">
+        Generate password list
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_6" type="checkbox" id="__nav_13_1_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_6">
+          Good to know
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Good to know" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Good to know
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/good_to_know/active_directory_help_commands/" class="md-nav__link">
+        Active directory help commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/good_to_know/ldap_syntax/" class="md-nav__link">
+        Ldap syntax
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/good_to_know/neo4j_and_cypher/" class="md-nav__link">
+        Neo4j and cypher
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/good_to_know/tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/good_to_know/transferring_files/" class="md-nav__link">
+        Transferring files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/good_to_know/windows_access_control/" class="md-nav__link">
+        Windows access control
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_7" type="checkbox" id="__nav_13_1_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_7">
+          Initial access
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Initial access" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          Initial access
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/initial_access/llmnr_and_nbtns_poisoning/" class="md-nav__link">
+        Llmnr and nbtns poisoning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/initial_access/mitm6/" class="md-nav__link">
+        Mitm6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/initial_access/password_spraying/" class="md-nav__link">
+        Password spraying
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/initial_access/wpad_spoofing/" class="md-nav__link">
+        Wpad spoofing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_8" type="checkbox" id="__nav_13_1_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_8">
+          Local privilege escalation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Local privilege escalation" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_8">
+          <span class="md-nav__icon md-icon"></span>
+          Local privilege escalation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/local_privilege_escalation/local_privilege_escalation/" class="md-nav__link">
+        Privilege Escalation Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/local_privilege_escalation/shutdown_windows_defender/" class="md-nav__link">
+        Shut down windows defender
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_9" type="checkbox" id="__nav_13_1_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_9">
+          Powershell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Powershell" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_9">
+          <span class="md-nav__icon md-icon"></span>
+          Powershell
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/powershell/activedirectory/" class="md-nav__link">
+        Powershell - Active Directory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/powershell/amsi_bypass/" class="md-nav__link">
+        Antimalware Scan Interface (AMSI)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/powershell/basics_of_powershell/" class="md-nav__link">
+        Basics of powershell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/powershell/jit_csharp_compilation/" class="md-nav__link">
+        Load native Windows API functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/powershell/local_machine_recon/" class="md-nav__link">
+        Windows - Local recon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/powershell/networking/" class="md-nav__link">
+        Networking with powershell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/powershell/running_program_as_user_without_guiinteraction/" class="md-nav__link">
+        Running program as user without guiinteraction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_10" type="checkbox" id="__nav_13_1_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_10">
+          Recon
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Recon" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_10">
+          <span class="md-nav__icon md-icon"></span>
+          Recon
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/recon/active_directory_recon/" class="md-nav__link">
+        Active directory recon
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_11" type="checkbox" id="__nav_13_1_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_11">
+          Remote access
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Remote access" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_11">
+          <span class="md-nav__icon md-icon"></span>
+          Remote access
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/remote_access/remote_access/" class="md-nav__link">
+        Remote access
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_1_12" type="checkbox" id="__nav_13_1_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_1_12">
+          Understanding active directory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Understanding active directory" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_1_12">
+          <span class="md-nav__icon md-icon"></span>
+          Understanding active directory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/understanding_active_directory/about_active_directory/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/understanding_active_directory/ad_physical_topology/" class="md-nav__link">
+        Ad physical topology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/understanding_active_directory/default_groups/" class="md-nav__link">
+        Default groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/understanding_active_directory/domain_controller/" class="md-nav__link">
+        Domain controller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/understanding_active_directory/group_policies/" class="md-nav__link">
+        Group policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/active_directory/understanding_active_directory/kerberos/" class="md-nav__link">
+        Kerberos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_2" type="checkbox" id="__nav_13_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_2">
+          Basic hardening
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Basic hardening" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_2">
+          <span class="md-nav__icon md-icon"></span>
+          Basic hardening
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/basic_hardening/hardening_bios/" class="md-nav__link">
+        Hardening bios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/basic_hardening/hardening_linux/" class="md-nav__link">
+        Hardening
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_3" type="checkbox" id="__nav_13_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_3">
+          Basics of windows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Basics of windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_3">
+          <span class="md-nav__icon md-icon"></span>
+          Basics of windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/basics_of_windows/basics_of_windows/" class="md-nav__link">
+        Basics of windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/basics_of_windows/cmd/" class="md-nav__link">
+        CMD - Windows commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/basics_of_windows/default_windows_files/" class="md-nav__link">
+        Default windows files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/basics_of_windows/powershell/" class="md-nav__link">
+        PowerShell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/basics_of_windows/powershell_scripting2/" class="md-nav__link">
+        Powershell scripting
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_4" type="checkbox" id="__nav_13_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_4">
+          Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_4">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_4_1" type="checkbox" id="__nav_13_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_4_1">
+          Attacking azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Attacking azure" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Attacking azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/cloud/attacking_azure/abuse_application_administrator_role/" class="md-nav__link">
+        Abuse application administrator role
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/cloud/attacking_azure/abuse_azure_ad_sso/" class="md-nav__link">
+        Abuse azure ad sso
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/cloud/attacking_azure/check_for_blobs/" class="md-nav__link">
+        Check for blobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/cloud/attacking_azure/check_for_misconfigured_azuread_groups/" class="md-nav__link">
+        Check for misconfigured azuread groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/cloud/attacking_azure/check_for_passwords_azure/" class="md-nav__link">
+        Check for passwords azure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/cloud/attacking_azure/check_for_sso_enabled_services/" class="md-nav__link">
+        Check for sso enabled services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/cloud/attacking_azure/password_hash_syncronization/" class="md-nav__link">
+        Password hash syncronization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/cloud/attacking_azure/password_spraying/" class="md-nav__link">
+        Password spraying
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/cloud/attacking_azure/passwords_in_active_directory_attribute/" class="md-nav__link">
+        Passwords in active directory attribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/cloud/attacking_azure/recon/" class="md-nav__link">
+        Recon
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_5" type="checkbox" id="__nav_13_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_5">
+          Cryptography
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cryptography" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cryptography
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/cryptography/client_certificate_tests/" class="md-nav__link">
+        Client certificate tests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_6" type="checkbox" id="__nav_13_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_6">
+          External network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="External network" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_6">
+          <span class="md-nav__icon md-icon"></span>
+          External network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/external_network/attacking_external_networks/" class="md-nav__link">
+        Scanning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_7" type="checkbox" id="__nav_13_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_7">
+          Initial access
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Initial access" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_7">
+          <span class="md-nav__icon md-icon"></span>
+          Initial access
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/initial_access/initial_access/" class="md-nav__link">
+        Initial access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/initial_access/initial_access_dropper/" class="md-nav__link">
+        Initial access dropper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/initial_access/phishing_server/" class="md-nav__link">
+        Phishing server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/initial_access/reverse_shell/" class="md-nav__link">
+        Reverse-shells
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/initial_access/social_engineering_-_phishing/" class="md-nav__link">
+        Social Engineering - Phishing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_8" type="checkbox" id="__nav_13_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_8">
+          Internal network
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Internal network" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_8">
+          <span class="md-nav__icon md-icon"></span>
+          Internal network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/internal_network/active_information_gathering/" class="md-nav__link">
+        Active information gathering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/internal_network/arp-spoofing/" class="md-nav__link">
+        Arp-spoofing - Sniffing traffic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/internal_network/basics_of_networking/" class="md-nav__link">
+        Basics of networking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/internal_network/dns_zone_transfer_attack/" class="md-nav__link">
+        DNS Zone Transfer Attack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/internal_network/infrastructure_pentest_scanning_networks/" class="md-nav__link">
+        Infrastructure pentest scanning networks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/internal_network/list_of_common_ports/" class="md-nav__link">
+        Common ports/services and how to use them
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/internal_network/network_attacks/" class="md-nav__link">
+        Network attacks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_9" type="checkbox" id="__nav_13_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_9">
+          Kubernetes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Kubernetes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_9">
+          <span class="md-nav__icon md-icon"></span>
+          Kubernetes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/kubernetes/attacking_kubernetes/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/kubernetes/attacking_kubernetes_checklist/" class="md-nav__link">
+        Attacking kubernetes checklist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/kubernetes/basics_of_docker/" class="md-nav__link">
+        Create image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/kubernetes/basics_of_kubernetes/" class="md-nav__link">
+        Basics of kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/kubernetes/kubernetes_hacking_tools/" class="md-nav__link">
+        Kubernetes hacking tools
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_10" type="checkbox" id="__nav_13_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_10">
+          Mobile applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mobile applications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_10">
+          <span class="md-nav__icon md-icon"></span>
+          Mobile applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_10_1" type="checkbox" id="__nav_13_10_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_10_1">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Android" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_10_1">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/mobile_applications/android/android_tools/" class="md-nav__link">
+        Android tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/mobile_applications/android/android_vuln_checklist/" class="md-nav__link">
+        Manifest configurations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/mobile_applications/android/mobile_application_setup/" class="md-nav__link">
+        Mobile application setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/mobile_applications/android/mobile_application_vulnerabilities_android/" class="md-nav__link">
+        Mobile application vulnerabilities android
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_10_2" type="checkbox" id="__nav_13_10_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_10_2">
+          Ios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ios" data-md-level="3">
+        <label class="md-nav__title" for="__nav_13_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          Ios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/mobile_applications/ios/ios_application_vulnerabilities/" class="md-nav__link">
+        Ios application vulnerabilities
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/mobile_applications/ios/ios_setup/" class="md-nav__link">
+        Pentesting application on iPhone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/mobile_applications/ios/ios_vuln_checklist/" class="md-nav__link">
+        Ios vuln checklist
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_11" type="checkbox" id="__nav_13_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_11">
+          Password cracking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Password cracking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_11">
+          <span class="md-nav__icon md-icon"></span>
+          Password cracking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/password_cracking/generate_custom_wordlist/" class="md-nav__link">
+        Generate custom wordlist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/password_cracking/generate_password_list/" class="md-nav__link">
+        Generate password list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/password_cracking/offline_password_cracking/" class="md-nav__link">
+        Offline password cracking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/password_cracking/online_password_cracking/" class="md-nav__link">
+        Online password cracking
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_12" type="checkbox" id="__nav_13_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_12">
+          Physical attacks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Physical attacks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_12">
+          <span class="md-nav__icon md-icon"></span>
+          Physical attacks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/physical_attacks/physical_access_to_machine/" class="md-nav__link">
+        Physical access to machine
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_13" type="checkbox" id="__nav_13_13" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_13">
+          Post exploitation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Post exploitation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_13">
+          <span class="md-nav__icon md-icon"></span>
+          Post exploitation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/post_exploitation/getting_meterpreter_shell/" class="md-nav__link">
+        Meterpreter shell for post-exploitation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/post_exploitation/privilege_escalation_-_linux/" class="md-nav__link">
+        Privilege Escalation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/post_exploitation/spawning_shells/" class="md-nav__link">
+        Spawning shells
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_14" type="checkbox" id="__nav_13_14" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_14">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_14">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/python/python_fundamentals/" class="md-nav__link">
+        Python fundamentals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/python/useful_python_commands/" class="md-nav__link">
+        Useful Scripts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_15" type="checkbox" id="__nav_13_15" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_15">
+          Random tips and tricks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Random tips and tricks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_15">
+          <span class="md-nav__icon md-icon"></span>
+          Random tips and tricks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/random_tips_and_tricks/general_tips/" class="md-nav__link">
+        General tips
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/random_tips_and_tricks/pivoting/" class="md-nav__link">
+        Pivoting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/random_tips_and_tricks/port_forwarding_and_tunneling/" class="md-nav__link">
+        Pivoting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/random_tips_and_tricks/port_knocking/" class="md-nav__link">
+        Port knocking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/random_tips_and_tricks/setuid_c-code/" class="md-nav__link">
+        Setuid c-code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_16" type="checkbox" id="__nav_13_16" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_16">
+          Recon
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Recon" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_16">
+          <span class="md-nav__icon md-icon"></span>
+          Recon
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/recon/finding_subdomains/" class="md-nav__link">
+        Find Subdomains
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/recon/google_hacking/" class="md-nav__link">
+        Search Engine Discovery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/recon/passive_information_gathering/" class="md-nav__link">
+        Passive information gathering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/recon/port_scanning/" class="md-nav__link">
+        Port Scanning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_17" type="checkbox" id="__nav_13_17" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_17">
+          Rfid cards
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rfid cards" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_17">
+          <span class="md-nav__icon md-icon"></span>
+          Rfid cards
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/rfid_cards/basics_of_rfid_hacking/" class="md-nav__link">
+        Basics of rfid hacking
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_18" type="checkbox" id="__nav_13_18" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_18">
+          Thick client
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Thick client" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_18">
+          <span class="md-nav__icon md-icon"></span>
+          Thick client
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/thick_client/attacking_thick_client/" class="md-nav__link">
+        Attacking thick client
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_19" type="checkbox" id="__nav_13_19" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_19">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tools" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_19">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/tools/gdb/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/tools/webshell/" class="md-nav__link">
+        Webshell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/tools/wget/" class="md-nav__link">
+        wget
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/tools/wireshark/" class="md-nav__link">
+        Wireshark
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_20" type="checkbox" id="__nav_13_20" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_20">
+          Transferring files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transferring files" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_20">
+          <span class="md-nav__icon md-icon"></span>
+          Transferring files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/transferring_files/transfering_files/" class="md-nav__link">
+        Transferring Files to Windows
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_21" type="checkbox" id="__nav_13_21" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_21">
+          Web applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web applications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_21">
+          <span class="md-nav__icon md-icon"></span>
+          Web applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/bankid_attacks/" class="md-nav__link">
+        Bankid attacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/bypass_image_upload/" class="md-nav__link">
+        Bypass File Upload Filtering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/cache_poisoning/" class="md-nav__link">
+        Cache poisoning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/cross-site-scripting/" class="md-nav__link">
+        Cross-site-scripting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/cross_site_request_forgery/" class="md-nav__link">
+        Cross Site Request Forgery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/cross_site_web_socket_hijack/" class="md-nav__link">
+        Cross site web socket hijack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/csv_injection/" class="md-nav__link">
+        Csv injection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/deserialization_attacks/" class="md-nav__link">
+        Deserialization attacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/dom_based_xss/" class="md-nav__link">
+        Dom based xss
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/host-header-attack/" class="md-nav__link">
+        Host Header Attack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/local_file_inclusion/" class="md-nav__link">
+        Local File Inclusion (LFI)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/nosql-injections/" class="md-nav__link">
+        Nosql-injections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/oauth_attacks/" class="md-nav__link">
+        Oauth attacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/remote_file_inclusion/" class="md-nav__link">
+        Remote File Inclusion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/session-fixation/" class="md-nav__link">
+        Session fixation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/sql-injections/" class="md-nav__link">
+        SQL-injections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/static_analysis_of_javascript/" class="md-nav__link">
+        Static analysis of javascript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/subdomain_takeover/" class="md-nav__link">
+        Subdomain Takeover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/web-scanning/" class="md-nav__link">
+        Find hidden files and directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/web_applications/xml_external_entity_attack/" class="md-nav__link">
+        XML External Entity Attack
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_22" type="checkbox" id="__nav_13_22" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13_22">
+          Wifi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Wifi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_22">
+          <span class="md-nav__icon md-icon"></span>
+          Wifi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/wifi/wifi/" class="md-nav__link">
+        Wifi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security_notes/wifi/wifi_network_segmentation/" class="md-nav__link">
+        Wifi network segmentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/julianhal/notes/edit/master/docs/4-win-privesc/CLSIDs/windows7Enterprise.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="windows-7-enterprise">Windows 7 Enterprise<a class="headerlink" href="#windows-7-enterprise" title="Permanent link">#</a></h1>
+<table>
+<thead>
+<tr>
+<th>LocalService</th>
+<th>AppId</th>
+<th>CLSID</th>
+<th>User</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ShellHWDetection</td>
+<td>{B1B9CBB2-B198-47E2-8260-9FD629A2B2EC}</td>
+<td>{555F3418-D99E-4E51-800A-6E89CFD8B1D7}</td>
+<td>NT AUTHORITY\SYSTEM</td>
+</tr>
+<tr>
+<td>BITS</td>
+<td>{69AD4AEE-51BE-439b-A92C-86AE490E8B30}</td>
+<td>{03ca98d6-ff5d-49b8-abc6-03dd84127020}</td>
+<td>NT AUTHORITY\SYSTEM</td>
+</tr>
+<tr>
+<td>BITS</td>
+<td>{69AD4AEE-51BE-439b-A92C-86AE490E8B30}</td>
+<td>{F087771F-D74F-4C1A-BB8A-E16ACA9124EA}</td>
+<td>NT AUTHORITY\SYSTEM</td>
+</tr>
+<tr>
+<td>BITS</td>
+<td>{69AD4AEE-51BE-439b-A92C-86AE490E8B30}</td>
+<td>{6d18ad12-bde3-4393-b311-099c346e6df9}</td>
+<td>NT AUTHORITY\SYSTEM</td>
+</tr>
+<tr>
+<td>BITS</td>
+<td>{69AD4AEE-51BE-439b-A92C-86AE490E8B30}</td>
+<td>{4991d34b-80a1-4291-83b6-3328366b9097}</td>
+<td>NT AUTHORITY\SYSTEM</td>
+</tr>
+<tr>
+<td>BITS</td>
+<td>{69AD4AEE-51BE-439b-A92C-86AE490E8B30}</td>
+<td>{69AD4AEE-51BE-439b-A92C-86AE490E8B30}</td>
+<td>NT AUTHORITY\SYSTEM</td>
+</tr>
+<tr>
+<td>BITS</td>
+<td>{69AD4AEE-51BE-439b-A92C-86AE490E8B30}</td>
+<td>{659cdea7-489e-11d9-a9cd-000d56965251}</td>
+<td>NT AUTHORITY\SYSTEM</td>
+</tr>
+<tr>
+<td>ehSched</td>
+<td>{FA018B44-5E9F-4875-B127-5085A1B02ABD}</td>
+<td>{4B635ECB-0887-4015-8CA6-D621362F98D1}</td>
+<td>NT AUTHORITY\NETWORKSERVICE</td>
+</tr>
+<tr>
+<td>netprofm</td>
+<td>{C96887DA-A652-4426-905E-4A37546F847C}</td>
+<td>{A47979D2-C419-11D9-A5B4-001185AD2B89}</td>
+<td>NT AUTHORITY\LOCAL SERVICE</td>
+</tr>
+<tr>
+<td>lltdsvc</td>
+<td>{19BCA967-D266-436f-B2D4-CBE4D4B42F96}</td>
+<td>{5BF9AA75-D7FF-4aee-AA2C-96810586456D}</td>
+<td>NT AUTHORITY\LOCAL SERVICE</td>
+</tr>
+<tr>
+<td>hkmsvc</td>
+<td>{46298684-0fd3-47f3-94b3-65650c65b36a}</td>
+<td>{ff258fc0-99b1-4297-b857-539ad9bc13ed}</td>
+<td>NT AUTHORITY\LOCAL SERVICE</td>
+</tr>
+<tr>
+<td>EventSystem</td>
+<td>{1BE1F766-5536-11D1-B726-00C04FB926AF}</td>
+<td>{1BE1F766-5536-11D1-B726-00C04FB926AF}</td>
+<td>NT AUTHORITY\LOCAL SERVICE</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6d8ff8e0-730d-11d4-bf42-00b0d0118b56}</td>
+<td>{6d8ff8e0-730d-11d4-bf42-00b0d0118b56}</td>
+<td>NT AUTHORITY\LOCAL SERVICE</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1F87137D-0E7C-44d5-8C73-4EFFB68962F2}</td>
+<td>{1F87137D-0E7C-44d5-8C73-4EFFB68962F2}</td>
+<td>NT AUTHORITY\LOCAL SERVICE</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CF254B00-1986-4b24-A92D-463D01F7E395}</td>
+<td>{E1BA41AD-4A1D-418F-AABA-3D1196B423D3}</td>
+<td>NT AUTHORITY\LOCAL SERVICE</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{3e5ca495-8d6a-4d1f-ad99-177b426c8b8e}</td>
+<td>{0289a7c5-91bf-4547-81ae-fec91a89dec5}</td>
+<td>NT AUTHORITY\LOCAL SERVICE</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7d378de6-ed8d-426d-91df-0273d07cd7f6}</td>
+<td>{98068995-54d2-4136-9bc9-6dbcb0a4683f}</td>
+<td>NT AUTHORITY\LOCAL SERVICE</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{209444d2-2540-495e-962c-a61ad3243526}</td>
+<td>{9acf41ed-d457-4cc1-941b-ab02c26e4686}</td>
+<td>NT AUTHORITY\LOCAL SERVICE</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{3feb2f63-0eec-4b96-84ab-da1307e0117c}</td>
+<td>{9678f47f-2435-475c-b24a-4606f8161c16}</td>
+<td>NT AUTHORITY\LOCAL SERVICE</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0E11CB54-4C4A-4B37-AE0B-E93CEE60E646}</td>
+<td>{95142bf8-5f09-452b-b384-44af84a500c6}</td>
+<td>NT AUTHORITY\LOCAL SERVICE</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{FCC74B77-EC3E-4dd8-A80B-008A702075A9}</td>
+<td>{FCC74B77-EC3E-4dd8-A80B-008A702075A9}</td>
+<td>LOGGED-IN-USER</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{9BA05972-F6A8-11CF-A442-00A0C90A8F39}</td>
+<td>{9BA05972-F6A8-11CF-A442-00A0C90A8F39}</td>
+<td>LOGGED-IN-USER</td>
+</tr>
+<tr>
+<td>wuauserv</td>
+<td>{653C5148-4DCE-4905-9CFD-1B23662D3D9E}</td>
+<td>{e60687f7-01a1-40aa-86ac-db1cbf673334}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>wuauserv</td>
+<td>{653C5148-4DCE-4905-9CFD-1B23662D3D9E}</td>
+<td>{9B1F122C-2982-4e91-AA8B-E071D54F2A4D}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>WSearch</td>
+<td>{9E175B9C-F52A-11D8-B9A5-505054503030}</td>
+<td>{30766BD2-EA1C-4F28-BF27-0B44E2F68DB7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>WSearch</td>
+<td>{9E175B9C-F52A-11D8-B9A5-505054503030}</td>
+<td>{9E175B68-F52A-11D8-B9A5-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>WSearch</td>
+<td>{9E175B9C-F52A-11D8-B9A5-505054503030}</td>
+<td>{A5270F6C-19EC-4E17-9EA1-A7074276B9B9}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>WSearch</td>
+<td>{9E175B9C-F52A-11D8-B9A5-505054503030}</td>
+<td>{E63DE750-3BD7-4BE5-9C84-6B4281988C44}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>WSearch</td>
+<td>{9E175B9C-F52A-11D8-B9A5-505054503030}</td>
+<td>{A9B5F443-FE02-4C19-859D-E9B5C5A1B6C6}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>WSearch</td>
+<td>{9E175B9C-F52A-11D8-B9A5-505054503030}</td>
+<td>{9E175B6D-F52A-11D8-B9A5-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>WSearch</td>
+<td>{9E175B9C-F52A-11D8-B9A5-505054503030}</td>
+<td>{7D096C5F-AC08-4F1F-BEB7-5C22C517CE39}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>WSearch</td>
+<td>{9E175B9C-F52A-11D8-B9A5-505054503030}</td>
+<td>{5815ADD9-95C5-44F2-8262-3BCD56AA3147}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>WSearch</td>
+<td>{9E175B9C-F52A-11D8-B9A5-505054503030}</td>
+<td>{602BDCE5-CA64-4E91-B27C-FFCA48978A00}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>winmgmt</td>
+<td>{8BC3F05E-D86B-11D0-A075-00C04FB68820}</td>
+<td>{C49E32C6-BC8B-11d2-85D4-00105A1F8304}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>winmgmt</td>
+<td>{8BC3F05E-D86B-11D0-A075-00C04FB68820}</td>
+<td>{8BC3F05E-D86B-11D0-A075-00C04FB68820}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>wercplsupport</td>
+<td>{136A0DC7-DF5C-4271-A2AC-15DF1A1323F2}</td>
+<td>{0E9A7BB5-F699-4D66-8A47-B919F5B6A1DB}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>WcsPlugInService</td>
+<td>{CD11FAB6-1C0E-45e1-BA31-5C6008EF2607}</td>
+<td>{69B37063-2BB6-43b5-A109-60E69A77840F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>wbengine</td>
+<td>{C3B65D83-FB15-4e3f-BA04-097D1E2B5AC1}</td>
+<td>{37734C4D-FFA8-4139-9AAC-60FBE55BF3DF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>WatAdminSvc</td>
+<td>{205609B7-5E08-443E-B0A7-A7AED3F3A716}</td>
+<td>{F02602C4-3C2A-473B-B35E-679A0076A4A5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>VSS</td>
+<td>{56BE716B-2F76-4dfa-8702-67AE10044F0B}</td>
+<td>{95243A62-2F9B-4FDF-B437-40D965F6D17F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>VSS</td>
+<td>{56BE716B-2F76-4dfa-8702-67AE10044F0B}</td>
+<td>{E579AB5F-1CC4-44b4-BED9-DE0991FF0623}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>VSS</td>
+<td>{56BE716B-2F76-4dfa-8702-67AE10044F0B}</td>
+<td>{0B5A2C52-3EB9-470a-96E2-6C6D4570E40F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>vds</td>
+<td>{F290BFB2-1864-45B1-8804-2654194A87E7}</td>
+<td>{7D1933CB-86F6-4A98-8628-01BE94C9A575}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>upnphost</td>
+<td>{E495081B-BBA5-4b89-BA3C-3B86A686B87A}</td>
+<td>{204810b9-73b2-11d4-bf42-00b0d0118b56}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>upnphost</td>
+<td>{E495081B-BBA5-4b89-BA3C-3B86A686B87A}</td>
+<td>{2e5e84e9-4049-4244-b728-2d24227157c7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>upnphost</td>
+<td>{E495081B-BBA5-4b89-BA3C-3B86A686B87A}</td>
+<td>{6d8ff8df-730d-11d4-bf42-00b0d0118b56}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>upnphost</td>
+<td>{E495081B-BBA5-4b89-BA3C-3B86A686B87A}</td>
+<td>{0fb40f0d-1021-4022-8da0-aab0588dfc8b}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>upnphost</td>
+<td>{E495081B-BBA5-4b89-BA3C-3B86A686B87A}</td>
+<td>{6d8ff8d2-730d-11d4-bf42-00b0d0118b56}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>upnphost</td>
+<td>{E495081B-BBA5-4b89-BA3C-3B86A686B87A}</td>
+<td>{6d8ff8dc-730d-11d4-bf42-00b0d0118b56}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>upnphost</td>
+<td>{E495081B-BBA5-4b89-BA3C-3B86A686B87A}</td>
+<td>{6d8ff8e1-730d-11d4-bf42-00b0d0118b56}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>upnphost</td>
+<td>{E495081B-BBA5-4b89-BA3C-3B86A686B87A}</td>
+<td>{6d8ff8e5-730d-11d4-bf42-00b0d0118b56}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>upnphost</td>
+<td>{E495081B-BBA5-4b89-BA3C-3B86A686B87A}</td>
+<td>{6d8ff8dd-730d-11d4-bf42-00b0d0118b56}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>upnphost</td>
+<td>{E495081B-BBA5-4b89-BA3C-3B86A686B87A}</td>
+<td>{6d8ff8e7-730d-11d4-bf42-00b0d0118b56}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>TrustedInstaller</td>
+<td>{752073A2-23F2-4396-85F0-8FDB879ED0ED}</td>
+<td>{752073A1-23F2-4396-85F0-8FDB879ED0ED}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>TrustedInstaller</td>
+<td>{752073A2-23F2-4396-85F0-8FDB879ED0ED}</td>
+<td>{4729dc2b-36ff-405f-bd36-f45113adb052}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>TrustedInstaller</td>
+<td>{752073A2-23F2-4396-85F0-8FDB879ED0ED}</td>
+<td>{8F5DF053-3013-4dd8-B5F4-88214E81C0CF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>TrustedInstaller</td>
+<td>{752073A2-23F2-4396-85F0-8FDB879ED0ED}</td>
+<td>{3c6859ce-230b-48a4-be6c-932c0c202048}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>TPVCGateway</td>
+<td>{2c6594dd-04ad-490f-a447-dc8e2772e9cb}</td>
+<td>{2c6594dc-04ad-490f-a447-dc8e2772e9cb}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>TermService</td>
+<td>{C9F65BA8-1F8F-4382-AE27-C91FFB29275F}</td>
+<td>{F9A874B6-F8A8-4D73-B5A8-AB610816828B}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>swprv</td>
+<td>{4db9c793-c48d-449c-9754-46027ee45c94}</td>
+<td>{65EE1DBA-8FF4-4a58-AC1C-3470EE2F376A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>stisvc</td>
+<td>{A1F4E726-8CF1-11D1-BF92-0060081ED811}</td>
+<td>{A1F4E726-8CF1-11D1-BF92-0060081ED811}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>stisvc</td>
+<td>{B6C292BC-7C88-41EE-8B54-8EC92617E599}</td>
+<td>{B6C292BC-7C88-41EE-8B54-8EC92617E599}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ShellHWDetection</td>
+<td>{B1B9CBB2-B198-47E2-8260-9FD629A2B2EC}</td>
+<td>{DD522ACC-F821-461A-A407-50B198B896DC}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>SharedAccess</td>
+<td>{ce166e40-1e72-45b9-94c9-3b2050e8f180}</td>
+<td>{d851f103-8c90-4321-aff0-58ba5bd421c2}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sdrsvc</td>
+<td>{9037e3cf-1794-4af6-9c8d-92838d7a23db}</td>
+<td>{47135eea-06b6-4452-8787-4a187c64a47e}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sdrsvc</td>
+<td>{9037e3cf-1794-4af6-9c8d-92838d7a23db}</td>
+<td>{687e55ca-6621-4c41-b9f1-c0eddc94bb05}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>profsvc</td>
+<td>{72E3272B-4EEA-4104-B358-1A282E4FC1AD}</td>
+<td>{BA677074-762C-444b-94C8-8C83F93F6605}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126AD1-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126ADF-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126AD7-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126AD5-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126ADB-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{6FE54E0E-009F-4E3D-A830-EDFA71E1F306}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126AD2-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126ADD-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126AD4-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{CD5096A1-E7E7-4E09-8B12-CBF2790A87CF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126AE5-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126AD8-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126AD3-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126AD9-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126AE3-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126ADE-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{BA126AD6-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>netman</td>
+<td>{27AF75ED-20D9-11D1-B1CE-00805FC1270E}</td>
+<td>{B4C8DF59-D16F-4042-80B7-3557A254B7C5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>napagent</td>
+<td>{B292921D-AF50-400c-9B75-0C57A7F29BA1}</td>
+<td>{e5fae3b3-1ac8-4bd3-87e6-48eff509ddaa}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>napagent</td>
+<td>{B292921D-AF50-400c-9B75-0C57A7F29BA1}</td>
+<td>{38B22A43-49A8-45ab-BEB7-9137A488B1D3}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>napagent</td>
+<td>{B292921D-AF50-400c-9B75-0C57A7F29BA1}</td>
+<td>{DCBCA92E-7DBE-4eda-8B7B-3AAEA4DD412B}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>napagent</td>
+<td>{B292921D-AF50-400c-9B75-0C57A7F29BA1}</td>
+<td>{24FF4FDC-1D9F-4195-8C79-0DA39248FF48}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>MSIServer</td>
+<td>{000C101C-0000-0000-C000-000000000046}</td>
+<td>{000C101C-0000-0000-C000-000000000046}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>IPBusEnum</td>
+<td>{344ED43D-D086-4961-86A6-1106F4ACAD9B}</td>
+<td>{C97FCC79-E628-407D-AE68-A06AD6D8B4D1}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>IEEtwCollectorService</td>
+<td>{6CF9B800-50DB-46B5-9218-EACF07F5E414}</td>
+<td>{6CF9B800-50DB-46B5-9218-EACF07F5E414}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>HomeGroupProvider</td>
+<td>{EA022610-0748-4c24-B229-6C507EBDFDBB}</td>
+<td>{B77C4C36-0154-4c52-AB49-FAA03837E47F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>HomeGroupProvider</td>
+<td>{6F7C8E8F-DC69-4e3f-BC05-439962A05FD5}</td>
+<td>{6F7C8E8F-DC69-4e3f-BC05-439962A05FD5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>HomeGroupProvider</td>
+<td>{EA022610-0748-4c24-B229-6C507EBDFDBB}</td>
+<td>{EA022610-0748-4c24-B229-6C507EBDFDBB}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fdPHost</td>
+<td>{D3DCB472-7261-43ce-924B-0704BD730D5F}</td>
+<td>{D3DCB472-7261-43ce-924B-0704BD730D5F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fdPHost</td>
+<td>{375ff002-dd27-11d9-8f9c-0002b3988e81}</td>
+<td>{375ff002-dd27-11d9-8f9c-0002b3988e81}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fdPHost</td>
+<td>{145B4335-FE2A-4927-A040-7C35AD3180EF}</td>
+<td>{145B4335-FE2A-4927-A040-7C35AD3180EF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fdPHost</td>
+<td>{35b1d3bb-2d4e-4a7c-9af0-f2f677af7c30}</td>
+<td>{35b1d3bb-2d4e-4a7c-9af0-f2f677af7c30}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ehSched</td>
+<td>{FA018B44-5E9F-4875-B127-5085A1B02ABD}</td>
+<td>{33D8C85A-B8C1-4828-B51A-4F3349AD5F9E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ehSched</td>
+<td>{FA018B44-5E9F-4875-B127-5085A1B02ABD}</td>
+<td>{AFD8EA5A-2B6E-4504-B681-C6E8BAD64BB6}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ehSched</td>
+<td>{FA018B44-5E9F-4875-B127-5085A1B02ABD}</td>
+<td>{50D9196A-DD32-4f64-9BD1-20AB9175858E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ehRecvr</td>
+<td>{b622553e-eadb-445e-9493-c3df5af99268}</td>
+<td>{8e482066-3e12-4188-86b6-fbc909c7e0d5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ehRecvr</td>
+<td>{b622553e-eadb-445e-9493-c3df5af99268}</td>
+<td>{c1ea08ae-1451-4b43-a19b-12298656ad35}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ehRecvr</td>
+<td>{b622553e-eadb-445e-9493-c3df5af99268}</td>
+<td>{D44CBB4F-743E-4818-8077-C47F666CA7EE}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ehRecvr</td>
+<td>{b622553e-eadb-445e-9493-c3df5af99268}</td>
+<td>{F4396DC6-E851-4D3A-8D01-34E6949F3500}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ehRecvr</td>
+<td>{b622553e-eadb-445e-9493-c3df5af99268}</td>
+<td>{EA23DFB6-E23F-4b94-B1A4-095D6E84493C}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>EapHost</td>
+<td>{0A886F29-465A-4aea-8B8E-BE926BFAE83E}</td>
+<td>{0A886F29-465A-4aea-8B8E-BE926BFAE83E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>EapHost</td>
+<td>{8C482DCE-2644-4419-AEFF-189219F916B9}</td>
+<td>{8C482DCE-2644-4419-AEFF-189219F916B9}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>defragsvc</td>
+<td>{ab7c873b-eb14-49a6-be60-a602f80e6d22}</td>
+<td>{d20a3293-3341-4ae8-9aaf-8e397cb63c34}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>CscService</td>
+<td>{AAAF9453-58F9-4872-A428-0507C383AC37}</td>
+<td>{FD3659E9-A920-4123-AD64-7FC76C7AACDF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>CscService</td>
+<td>{52551A19-B337-498d-AE75-2283E29902DE}</td>
+<td>{69486DD6-C19F-42e8-B508-A53F9F8E67B8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>BITS</td>
+<td>{69AD4AEE-51BE-439b-A92C-86AE490E8B30}</td>
+<td>{bb6df56b-cace-11dc-9992-0019b93a3a84}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>AxInstSv</td>
+<td>{0B15AFD8-3A99-4A6E-9975-30D66F70BD94}</td>
+<td>{90F18417-F0F1-484E-9D3C-59DCEEE5DBD8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ALG</td>
+<td>{4A0F9AA8-A71E-4CC3-891B-76CAC67E67C0}</td>
+<td>{D6015EC3-FA16-4813-9CA1-DA204574F5DA}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{66eea0f5-001a-4073-a496-783f86fcf4c0}</td>
+<td>{66eea0f5-001a-4073-a496-783f86fcf4c0}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{48da6741-1bf0-4a44-8325-293086c79077}</td>
+<td>{BFCB2C6D-04AA-4fb9-BC72-58E1AF64BE39}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E32549C4-C2B8-4BCC-90D7-0FC3511092BB}</td>
+<td>{8144B6F5-20A8-444a-B8EE-19DF0BB84BDB}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F135BE18-BF34-4CBD-B1D5-55D49F0DEDCC}</td>
+<td>{ADD18BF7-AB60-4283-A580-D7544DD255D2}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{fb479c02-9ec4-4fed-8599-debe037452cb}</td>
+<td>{fb479c02-9ec4-4fed-8599-debe037452cb}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7C8AB6D9-8764-4033-8F62-2FE896E54B32}</td>
+<td>{A25821B5-F310-41BD-806F-5864CC441B78}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{cdc32574-7521-4124-90c3-8d5605a34933}</td>
+<td>{cdc32574-7521-4124-90c3-8d5605a34933}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{25351F98-BEC9-4BA0-A1F7-D9D69225E52F}</td>
+<td>{61E79517-4A4E-45D8-9219-30E71A9EFF39}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{2C941FD1-975B-59BE-A960-9A2A262853A5}</td>
+<td>{2C941FC5-975B-59BE-A960-9A2A262853A5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F056D291-A2AB-45f7-8EE4-40454493B351}</td>
+<td>{F056D291-A2AB-45f7-8EE4-40454493B351}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{83B900D2-51E8-4B67-BD75-643C8F14BBD8}</td>
+<td>{DFEAF541-F3E1-4c24-ACAC-99C30715084A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837513-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{2206CDB0-19C1-11D1-89E0-00C04FD7A829}</td>
+<td>{2206CDB0-19C1-11D1-89E0-00C04FD7A829}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{D88EC52B-8D57-49e1-9EB3-4D267D68A2AE}</td>
+<td>{D88EC52B-8D57-49e1-9EB3-4D267D68A2AE}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CC70FEAD-94B9-4F76-88CC-004BB068ACDF}</td>
+<td>{2854F705-3548-414C-A113-93E27C808C85}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7568952A-571E-4C70-BEA9-7F9004393436}</td>
+<td>{07B0E5E9-D635-4CD3-B98D-7C10E700DEA0}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{777BA81A-2498-4875-933A-3067DE883070}</td>
+<td>{777BA816-2498-4875-933A-3067DE883070}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F75B6772-91E4-4D2F-9D44-61A447109C2B}</td>
+<td>{5437FDFA-9EC9-4CCC-8531-42F8D9C19AF7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{36938566-B1AA-4E77-9B3F-730CF4E996AB}</td>
+<td>{0365BE92-BD3F-47f5-8BB6-2EEF7AF5CAE7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{50d69d24-961d-4828-9d1c-5f4717f226d1}</td>
+<td>{BD84B380-8CA2-1069-AB1D-08000948F534}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{3eef301f-b596-4c0b-bd92-013beafce793}</td>
+<td>{3eef301f-b596-4c0b-bd92-013beafce793}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{659A3105-82A2-49F9-B7E4-263766BDF1DD}</td>
+<td>{f4a5145b-260d-437f-89c4-66d81c22e9b6}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E32549C4-C2B8-4BCC-90D7-0FC3511092BB}</td>
+<td>{D13E3F25-1688-45A0-9743-759EB35CDF9A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0F8DD0B7-D5A6-4C0C-BA04-8A2CA3CE5EE1}</td>
+<td>{A1E6E578-A831-4803-8DC3-433843B1E19C}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{5E1395B2-B685-44e3-8AED-E2304D85ACD1}</td>
+<td>{5E1395B2-B685-44e3-8AED-E2304D85ACD1}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E8054D20-497D-4E16-BF41-6E69FCD381A5}</td>
+<td>{4DF929E7-4C5E-4587-A598-7ED7B3D6E462}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{8D26D9AA-5DA8-4b95-949A-B74954A229A6}</td>
+<td>{8D26D9AA-5DA8-4b95-949A-B74954A229A6}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6d2b5079-2f0b-48dd-ab7f-97cec514d30b}</td>
+<td>{a42c2ccb-67d3-46fa-abe6-7d2f3488c7a3}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{AB8902B4-09CA-4bb6-B78D-A8F59079A8D5}</td>
+<td>{AB8902B4-09CA-4bb6-B78D-A8F59079A8D5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{3E000D72-A845-4CD9-BD83-80C07C3B881F}</td>
+<td>{3E000D72-A845-4CD9-BD83-80C07C3B881F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6B1DE8B3-DFB1-4C0E-9D9A-89CA730DE93F}</td>
+<td>{6B7F33AC-D91D-4563-BF36-0ACCB24E66FB}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6d2b5079-2f0b-48dd-ab7f-97cec514d30b}</td>
+<td>{f8b8412b-dea3-4130-b36c-5e8be73106ac}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{777BA81A-2498-4875-933A-3067DE883070}</td>
+<td>{777BA815-2498-4875-933A-3067DE883070}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6D9A7A40-DDCA-414E-B48E-DFB032C03C1B}</td>
+<td>{A4DDCA2B-E73C-40C5-83B1-9F40269D0B0D}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{273541FF-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>{2735412E-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{43332d9a-f3a9-4de4-be9a-0fa730bc311d}</td>
+<td>{19371BCB-2BFF-4F74-BB8E-3ABEA71B9E7D}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{4D111E08-CBF7-4f12-A926-2C7920AF52FC}</td>
+<td>{4D111E08-CBF7-4f12-A926-2C7920AF52FC}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CC70FEAD-94B9-4F76-88CC-004BB068ACDF}</td>
+<td>{36F54939-CD3B-4C73-92D5-F9A389ED631C}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{434A6274-C539-4E99-88FC-44206D942775}</td>
+<td>{434A6274-C539-4E99-88FC-44206D942775}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{8be0366c-8522-40be-8b08-cb26557f2854}</td>
+<td>{aac1009f-ab33-48f9-9a21-7f5b88426a2e}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{BBC4356A-F004-4628-A27A-E13D70412B70}</td>
+<td>{25B25D91-69A2-47fa-A375-FDC98189A06F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837532-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{76be8257-c4c0-4d37-90c0-a23372254d27}</td>
+<td>{76be8257-c4c0-4d37-90c0-a23372254d27}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{273541FF-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>{27354128-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6D9A7A40-DDCA-414E-B48E-DFB032C03C1B}</td>
+<td>{00BC7EAE-28D5-4310-BE9F-11526A7FA37F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837539-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{ff9e6131-a8c1-4188-aa03-82e9f10a05a8}</td>
+<td>{ff9e6131-a8c1-4188-aa03-82e9f10a05a8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{B366DEBE-645B-43A5-B865-DDD82C345492}</td>
+<td>{C2E88C2F-6F5B-4AAA-894B-55C847AD3A2D}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{59c7f6ec-7d18-412f-a68e-877982768e61}</td>
+<td>{e3a4e5ca-55b2-4a06-b1ab-8fbecc7bca4b}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{27170d71-7a40-4c8b-a3d1-64f7cbe81c66}</td>
+<td>{5bbd58bb-993e-4c17-8af6-3af8e908fca8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1A26548E-BC18-4DB0-B60C-75E8491D34AB}</td>
+<td>{48E1B01B-5619-4898-8714-DD1897BA07B2}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E10F6C3A-F1AE-4ADC-AA9D-2FE65525666E}</td>
+<td>{ADAB9B51-4CDD-4af0-892C-AB7FA7B3293F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{777BA81A-2498-4875-933A-3067DE883070}</td>
+<td>{777BA8F9-2498-4875-933A-3067DE883070}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6d2b5079-2f0b-48dd-ab7f-97cec514d30b}</td>
+<td>{914feed8-267a-4baa-b8aa-21e233792679}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{EA2C6B24-C590-457B-BAC8-4A0F9B13B5B8}</td>
+<td>{EA2C6B24-C590-457B-BAC8-4A0F9B13B5B8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{A5FFF81C-DB47-4658-A890-474CE0A3E729}</td>
+<td>{76052C5C-2EB4-4C40-B1F1-2A5C8554590A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7AB36653-1796-484B-BDFA-E74F1DB7C1DC}</td>
+<td>{7AB36653-1796-484B-BDFA-E74F1DB7C1DC}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E10F6C3A-F1AE-4adc-AA9D-2FE65525666E}</td>
+<td>{ecf5bf46-e3b6-449a-b56b-43f58f867814}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{86d5eb8a-859f-4c7b-a76b-2bd819b7a850}</td>
+<td>{86d5eb8a-859f-4c7b-a76b-2bd819b7a850}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0968e258-16c7-4dba-aa86-462dd61e31a3}</td>
+<td>{0968e258-16c7-4dba-aa86-462dd61e31a3}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{273541FF-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>{2735412D-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{01A39A4B-90E2-4EDF-8A1C-DD9E5F526568}</td>
+<td>{b8f87e75-d1d5-446b-931c-3f61b97bca7a}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{92C2A9B3-4228-438E-8A7B-EF110987764C}</td>
+<td>{00597829-82CE-44d4-8B0B-40BE695973B5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7e0423cd-1119-0928-900c-e6d4a52a0715}</td>
+<td>{49B2791A-B1AE-4C90-9B8E-E860BA07F889}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{893CFE8F-CD6B-412E-A2F0-10840D69E858}</td>
+<td>{3630AB4B-C0D2-4C1B-B7E7-73A2CF9A4521}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7aa7790d-75d7-484b-98a1-3913d022091d}</td>
+<td>{7aa7790d-75d7-484b-98a1-3913d022091d}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{11c058e0-9f3e-4c90-a459-2553f2f9e011}</td>
+<td>{12a66224-5e8a-4679-8941-0b9b960bf5ea}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{a4c31131-ff70-4984-afd6-0609ced53ad6}</td>
+<td>{a4c31131-ff70-4984-afd6-0609ced53ad6}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{4E14FBA2-2E22-11D1-9964-00C04FBBB345}</td>
+<td>{CDBEC9C0-7A68-11D1-88F9-0080C7D771BF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{273541FF-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>{2735412B-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{00021401-0000-0000-C000-000000000046}</td>
+<td>{00021401-0000-0000-C000-000000000046}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{b70cc729-28ae-11dd-9676-000000000000}</td>
+<td>{b70cc729-28ae-11dd-9676-000000000000}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837511-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{4E14FBA2-2E22-11D1-9964-00C04FBBB345}</td>
+<td>{4E14FBA2-2E22-11D1-9964-00C04FBBB345}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{92C2A9B3-4228-438E-8A7B-EF110987764C}</td>
+<td>{662C0206-72AD-4ee9-899F-5E1735F60A55}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837527-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{13390438-AA43-44B5-AEF0-DA857DD05B00}</td>
+<td>{46AE633A-032B-41CC-8FC7-E26E246E6CB8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{273541FF-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>{27354124-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{266C72E7-62E8-11D1-AD89-00C04FD8FDFF}</td>
+<td>{266C72E7-62E8-11D1-AD89-00C04FD8FDFF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{825FC848-87F7-4F26-9EF6-43964094FF98}</td>
+<td>{868A2E25-D6C1-450b-8510-734A4AFEE8BC}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{48da6741-1bf0-4a44-8325-293086c79077}</td>
+<td>{48da6741-1bf0-4a44-8325-293086c79077}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E10F6C3A-F1AE-4ADC-AA9D-2FE65525666E}</td>
+<td>{645FF040-5081-101B-9F08-00AA002F954E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{B1445657-5A98-11d9-A4E5-00301BB132BA}</td>
+<td>{83FEFA40-6F67-4244-AA04-1E590C1CB1D9}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0671E064-7C24-4AC0-AF10-0F3055707C32}</td>
+<td>{19BA17F2-2602-4E77-9027-103894607626}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CC70FEAD-94B9-4F76-88CC-004BB068ACDF}</td>
+<td>{9113A02D-00A3-46B9-BC5F-9C04DADDD5D7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6d2b5079-2f0b-48dd-ab7f-97cec514d30b}</td>
+<td>{BFD468D2-D0A0-4bdc-878C-E69C2F5B435D}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837525-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1C749B87-568C-4865-8E73-6413F8372CE6}</td>
+<td>{1C749B87-568C-4865-8E73-6413F8372CE6}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{893CFE8F-CD6B-412E-A2F0-10840D69E858}</td>
+<td>{A4E118DF-B9E5-4B42-888C-065CEAF8DDC3}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{98a89e0c-1fde-4c2a-a373-b04831e6aa60}</td>
+<td>{a677570a-2ba2-4e9a-b2e2-8a02cd8b4fd3}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{27170d71-7a40-4c8b-a3d1-64f7cbe81c66}</td>
+<td>{d63c23c5-53e6-48d5-adda-a385b6bb9c7b}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{92C2A9B3-4228-438E-8A7B-EF110987764C}</td>
+<td>{1DB68FCC-3C8C-49DB-8C76-9A89DE76B8CF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0da7bfdf-c0a0-44eb-be82-b7a82c4721de}</td>
+<td>{0da7bfdf-c0a0-44eb-be82-b7a82c4721de}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{3F5E4B87-C907-4f76-82E4-6FDF0CE90E25}</td>
+<td>{1AF81E4E-FC45-48ee-B236-A2A663494390}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{273541FF-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>{27354127-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{A4B07E49-6567-4FB8-8D39-01920E3B2357}</td>
+<td>{A4B07E49-6567-4FB8-8D39-01920E3B2357}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6d2b5079-2f0b-48dd-ab7f-97cec514d30b}</td>
+<td>{8a7cae0e-5951-49cb-bf20-ab3fa1e44b01}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{f32d97df-e3e5-4cb9-9e3e-0eb5b4e49801}</td>
+<td>{4B966436-6781-4906-8035-9AF94B32C3F7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6D9A7A40-DDCA-414E-B48E-DFB032C03C1B}</td>
+<td>{A49211A1-022F-43D7-BC55-D787C66ACF8E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1f2e5c40-9550-11ce-99d2-00aa006e086c}</td>
+<td>{1f2e5c40-9550-11ce-99d2-00aa006e086c}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6D9A7A40-DDCA-414E-B48E-DFB032C03C1B}</td>
+<td>{0A14D3FF-EC53-450f-AA30-FFBC55BE26A2}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{60173D16-A550-47f0-A14B-C6F9E4DA0831}</td>
+<td>{60173D16-A550-47f0-A14B-C6F9E4DA0831}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{4EFC572D-7C9C-455C-99F3-CA4D6838E55B}</td>
+<td>{A24BCC4A-448D-41CA-92BB-3DC15D81C16C}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{4FCDA643-B15B-41C6-84F8-5E447F6F6D25}</td>
+<td>{4F1DFCA6-3AAD-48E1-8406-4BC21A501D7C}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1E5300BE-0762-4527-8140-C0FF22DDFC56}</td>
+<td>{1E5300BE-0762-4527-8140-C0FF22DDFC56}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1fda955b-61ff-11da-978c-0008744faab7}</td>
+<td>{1fda955b-61ff-11da-978c-0008744faab7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1fb2a002-4c6c-4de7-85c2-cb8db9a4f728}</td>
+<td>{1fb2a002-4c6c-4de7-85c2-cb8db9a4f728}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E8054D20-497D-4E16-BF41-6E69FCD381A5}</td>
+<td>{A9710FB5-1840-4224-BD42-86831E28E43A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{273541FF-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>{27354125-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{4BC67F23-D805-4384-BCA3-6F1EDFF50E2C}</td>
+<td>{4BC67F23-D805-4384-BCA3-6F1EDFF50E2C}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E10F6C3A-F1AE-4adc-AA9D-2FE65525666E}</td>
+<td>{56EA1054-1959-467f-BE3B-A2A787C4B6EA}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{8f3080a6-af99-4f2e-a806-f3d5702a0444}</td>
+<td>{8f3080a6-af99-4f2e-a806-f3d5702a0444}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{4EFC572D-7C9C-455C-99F3-CA4D6838E55B}</td>
+<td>{0228576F-6E6C-4E1A-B175-0E46A316AFE2}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F8FD03A6-DDD9-4C1B-84EE-58159476A0D7}</td>
+<td>{69127644-2511-4DF5-BC6A-26178254AA40}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CBDC4B31-CBE4-4A5B-BECF-64B29E47D2AD}</td>
+<td>{9DCC3CC8-8609-4863-BAD4-03601F4C65E8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F8FD03A6-DDD9-4C1B-84EE-58159476A0D7}</td>
+<td>{C0B3C446-3032-4016-926F-9BAE48BEBFBE}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1A1F4206-0688-4E7F-BE03-D82EC69DF9A5}</td>
+<td>{1A1F4206-0688-4E7F-BE03-D82EC69DF9A5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6D9A7A40-DDCA-414E-B48E-DFB032C03C1B}</td>
+<td>{91ECFDB4-2606-43E4-8F86-E25B0CB01F1E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{BCEA735B-4DAC-4B71-9C47-1D560AFD2A9B}</td>
+<td>{BCEA735B-4DAC-4B71-9C47-1D560AFD2A9B}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{513D916F-2A8E-4F51-AEAB-0CBC76FB1AF8}</td>
+<td>{513D916F-2A8E-4F51-AEAB-0CBC76FB1AF8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{9df523b0-a6c0-4ea9-b5f1-f4565c3ac8b8}</td>
+<td>{9df523b0-a6c0-4ea9-b5f1-f4565c3ac8b8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E2B3C97F-6AE1-41AC-817A-F6F92166D7DD}</td>
+<td>{E2B3C97F-6AE1-41AC-817A-F6F92166D7DD}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0C3B05FB-3498-40C3-9C03-4B22D735550C}</td>
+<td>{0C3B05FB-3498-40C3-9C03-4B22D735550C}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{FBF23B40-E3F0-101B-8488-00AA003E56F8}</td>
+<td>{FBF23B40-E3F0-101B-8488-00AA003E56F8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{92C2A9B3-4228-438E-8A7B-EF110987764C}</td>
+<td>{1821B62A-B2A5-4e0a-98C5-9FA0D5BAAAEC}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CDCBCFCA-3CDC-436f-A4E2-0E02075250C2}</td>
+<td>{ceff45ee-c862-41de-aee2-a022c81eda92}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{B8C54A54-355E-11D3-83EB-00A0C92A2F2D}</td>
+<td>{91778246-9BE4-4713-A651-E833B853CC30}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{72A7994A-3092-4054-B6BE-08FF81AEEFFC}</td>
+<td>{72A7994A-3092-4054-B6BE-08FF81AEEFFC}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{73E709EA-5D93-4B2E-BBB0-99B7938DA9E4}</td>
+<td>{73E709EA-5D93-4B2E-BBB0-99B7938DA9E4}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F808DF63-6049-11D1-BA20-006097D2898E}</td>
+<td>{07A774A0-6047-11D1-BA20-006097D2898E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{50a9ab2a-20f8-4d71-9f32-9fd305b49601}</td>
+<td>{ffe1df5f-9f06-46d3-af27-f1fc10d63892}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F8FD03A6-DDD9-4C1B-84EE-58159476A0D7}</td>
+<td>{D0E55F9F-0021-42fe-A1DB-C41F5B564EFE}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{fd6c8b29-e936-4a61-8da6-b0c12ad3ba00}</td>
+<td>{73FDDC80-AEA9-101A-98A7-00AA00374959}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{36938566-B1AA-4E77-9B3F-730CF4E996AB}</td>
+<td>{6B19643A-0CD7-4563-B710-BDC191FCAD3B}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{30d49246-d217-465f-b00b-ac9ddd652eb7}</td>
+<td>{30d49246-d217-465f-b00b-ac9ddd652eb7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{8cec58ae-07a1-11d9-b15e-000d56bfe6ee}</td>
+<td>{8cec58ae-07a1-11d9-b15e-000d56bfe6ee}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F135BE18-BF34-4CBD-B1D5-55D49F0DEDCC}</td>
+<td>{75269C13-41E1-4D0E-B8A0-9F8F22E246C9}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{C100BEBB-D33A-4a4b-BF23-BBEF4663D017}</td>
+<td>{C100BEBB-D33A-4a4b-BF23-BBEF4663D017}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E9495B87-D950-4ab5-87A5-FF6D70BF3E90}</td>
+<td>{E9495B87-D950-4ab5-87A5-FF6D70BF3E90}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{ECABB0C3-7F19-11D2-978E-0000F8757E2A}</td>
+<td>{ECABB0C3-7F19-11D2-978E-0000F8757E2A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{3F4D7BB8-4F38-4526-8CD3-C44D68689C5F}</td>
+<td>{6D3951EB-0B07-4fb8-B703-7C5CEE0DB578}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{3E5FC7F9-9A51-4367-9063-A120244FBEC7}</td>
+<td>{3E5FC7F9-9A51-4367-9063-A120244FBEC7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{36938566-B1AA-4E77-9B3F-730CF4E996AB}</td>
+<td>{054AAE20-4BEA-4347-8A35-64A533254A9D}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{A7A63E5C-3877-4840-8727-C1EA9D7A4D50}</td>
+<td>{A7A63E5C-3877-4840-8727-C1EA9D7A4D50}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6295DF2D-35EE-11D1-8707-00C04FD93327}</td>
+<td>{6295DF2D-35EE-11D1-8707-00C04FD93327}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0CA545C6-37AD-4A6C-BF92-9F7610067EF5}</td>
+<td>{0CA545C6-37AD-4A6C-BF92-9F7610067EF5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{4BC67F23-D805-4384-BCA3-6F1EDFF50E2C}</td>
+<td>{01D0A625-782D-4777-8D4E-547E6457FAD5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{C947D50F-378E-4FF6-8835-FCB50305244D}</td>
+<td>{C947D50F-378E-4FF6-8835-FCB50305244D}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0E11CB54-4C4A-4B37-AE0B-E93CEE60E646}</td>
+<td>{CD621DE4-2AA5-4468-ADF1-087A05891DA7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{4f6bcd94-c2a5-42ce-8dbc-31e794be4630}</td>
+<td>{4f6bcd94-c2a5-42ce-8dbc-31e794be4630}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{4E14FBA2-2E22-11D1-9964-00C04FBBB345}</td>
+<td>{AB944620-79C6-11D1-88F9-0080C7D771BF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{12C21EA7-2EB8-4B55-9249-AC243DA8C666}</td>
+<td>{12C21EA7-2EB8-4B55-9249-AC243DA8C666}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{BB07BACD-CD56-4E63-A8FF-CBF0355FB9F4}</td>
+<td>{BB07BACD-CD56-4E63-A8FF-CBF0355FB9F4}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{92C2A9B3-4228-438E-8A7B-EF110987764C}</td>
+<td>{D722AF63-6A0D-4e37-BD40-CF6FAC79A83C}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{56676660-4A4D-45B0-B24E-9CF6B35E9ABF}</td>
+<td>{1E2D67D6-F596-4640-84F6-CE09D630E983}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837521-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{c2a71820-3463-498f-bab7-4798795a2ff6}</td>
+<td>{7be73787-ce71-4b33-b4c8-00d32b54bea8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837531-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6d2b5079-2f0b-48dd-ab7f-97cec514d30b}</td>
+<td>{92dbad9f-5025-49b0-9078-2d78f935e341}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{8D8B8E30-C451-421B-8553-D2976AFA648C}</td>
+<td>{8D8B8E30-C451-421B-8553-D2976AFA648C}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{3F4D7BB8-4F38-4526-8CD3-C44D68689C5F}</td>
+<td>{2F2165FF-2C2D-4612-87B2-CC8E5002EF4C}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F8FD03A6-DDD9-4C1B-84EE-58159476A0D7}</td>
+<td>{3C3A70A7-A468-49B9-8ADA-28E11FCCAD5D}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0010890e-8789-413c-adbc-48f5b511b3af}</td>
+<td>{0010890e-8789-413c-adbc-48f5b511b3af}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E10F6C3A-F1AE-4adc-AA9D-2FE65525666E}</td>
+<td>{9b359d1b-ad5c-412f-a654-a431424359de}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837547-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{2331D136-E39D-4019-92D6-7CE5579962FB}</td>
+<td>{2331D136-E39D-4019-92D6-7CE5579962FB}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1202DB60-1DAC-42C5-AED5-1ABDD432248E}</td>
+<td>{1202DB60-1DAC-42C5-AED5-1ABDD432248E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CBDC4B31-CBE4-4A5B-BECF-64B29E47D2AD}</td>
+<td>{2A11F42C-3E81-4ad4-9CBE-45579D89671A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{49f171dd-b51a-40d3-9a6c-52d674cc729d}</td>
+<td>{49f171dd-b51a-40d3-9a6c-52d674cc729d}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7F429620-16D1-471E-A81A-114992148034}</td>
+<td>{A5B020FD-E04B-4e67-B65A-E7DEED25B2CF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{273541FF-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>{2735412C-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{04626806-2243-4354-ab44-4ade718d09df}</td>
+<td>{b8fb4ad7-ea4a-4b47-bfdc-bfc94160a8ea}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CC70FEAD-94B9-4F76-88CC-004BB068ACDF}</td>
+<td>{D9144DCD-E998-4ECA-AB6A-DCD83CCBA16D}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1A26548E-BC18-4DB0-B60C-75E8491D34AB}</td>
+<td>{3B191048-B0AD-4CFE-902C-F51140AA77ED}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1F7D1BE9-7A50-40B6-A605-C4F3696F49C0}</td>
+<td>{1F7D1BE9-7A50-40b6-A605-C4F3696F49C0}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{36938566-B1AA-4E77-9B3F-730CF4E996AB}</td>
+<td>{C4D6E899-E38A-4838-9188-0B98EE3175E6}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{f62fdd2e-66d2-423b-9a04-f71ea00f892a}</td>
+<td>{1138506a-b949-46a7-b6c0-ee26499fdeaf}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6f33340d-8a01-473a-b75f-ded88c8360ce}</td>
+<td>{6f33340d-8a01-473a-b75f-ded88c8360ce}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{08F646B3-5E7F-4B7A-A5CB-F95445F9F67A}</td>
+<td>{BAEA8DC9-45F5-4DF8-A27F-2A277D524B15}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6d2b5079-2f0b-48dd-ab7f-97cec514d30b}</td>
+<td>{b9815375-5d7f-4ce2-9245-c9d4da436930}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{722b3793-5367-4446-b6bb-db89b05c1f24}</td>
+<td>{722b3793-5367-4446-b6bb-db89b05c1f24}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0E11CB54-4C4A-4B37-AE0B-E93CEE60E646}</td>
+<td>{5cc76543-0f98-47a8-afa2-208562ef9454}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{76AE5F57-B7C9-421f-B55E-FB25144317B6}</td>
+<td>{76AE5F57-B7C9-421f-B55E-FB25144317B6}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{FAF53CC4-BD73-4E36-83F1-2B23F46E513E}</td>
+<td>{FAF53CC4-BD73-4E36-83F1-2B23F46E513E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6d2b5079-2f0b-48dd-ab7f-97cec514d30b}</td>
+<td>{13D3C4B8-B179-4ebb-BF62-F704173E7448}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6d8ff8e8-730d-11d4-bf42-00b0d0118b56}</td>
+<td>{6d8ff8e8-730d-11d4-bf42-00b0d0118b56}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{27170d71-7a40-4c8b-a3d1-64f7cbe81c66}</td>
+<td>{4b360c3c-d284-4384-abcc-ef133e1445da}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0E11CB54-4C4A-4B37-AE0B-E93CEE60E646}</td>
+<td>{7F6316B4-4D69-4765-B0A3-B2598F2FA80A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7A076CE1-4B31-452a-A4F1-0304C8738100}</td>
+<td>{7A076CE1-4B31-452a-A4F1-0304C8738100}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{A2D8CFE7-7BA4-4bad-B86B-851376B59134}</td>
+<td>{A2D8CFE7-7BA4-4bad-B86B-851376B59134}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{C3812B04-E2F1-4E53-95F8-B2363C198946}</td>
+<td>{069501DC-D776-4778-8C76-81D7A3DFFBB7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{777BA81A-2498-4875-933A-3067DE883070}</td>
+<td>{777BA8FB-2498-4875-933A-3067DE883070}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{514B5E31-5596-422F-BE58-D804464683B5}</td>
+<td>{514B5E31-5596-422F-BE58-D804464683B5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837526-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{304CE942-6E39-40D8-943A-B913C40C9CD4}</td>
+<td>{304CE942-6E39-40D8-943A-B913C40C9CD4}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{ed1d0fdf-4414-470a-a56d-cfb68623fc58}</td>
+<td>{ed1d0fdf-4414-470a-a56d-cfb68623fc58}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{2C941FD1-975B-59BE-A960-9A2A262853A5}</td>
+<td>{CEEE3B62-8F56-4056-869B-EF16917E3EFC}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E32549C4-C2B8-4BCC-90D7-0FC3511092BB}</td>
+<td>{5f4baad0-4d59-4fcd-b213-783ce7a92f22}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{4E14FBA2-2E22-11D1-9964-00C04FBBB345}</td>
+<td>{7542E960-79C7-11D1-88F9-0080C7D771BF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{A9D431C2-6D56-4727-9690-ADBE66B9184A}</td>
+<td>{AEE3E4A8-EF01-4024-A0F1-809D9B096E14}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1BA783C1-2A30-4ad3-B928-A9A46C604C28}</td>
+<td>{1BA783C1-2A30-4ad3-B928-A9A46C604C28}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{C945AD06-534F-460C-8CB4-17C33099AF81}</td>
+<td>{61FFC721-B206-45d0-B02E-6AA7E52E1575}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E96767E0-7EAA-45e1-8E7D-64414AFF281A}</td>
+<td>{E96767E0-7EAA-45e1-8E7D-64414AFF281A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{383b69fa-5486-49da-91f5-d63c24c8e9d0}</td>
+<td>{383b69fa-5486-49da-91f5-d63c24c8e9d0}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{AA530F18-0818-4643-8884-AAE61A76488B}</td>
+<td>{0C776A5A-FC42-4870-8D65-D62ADD9184FF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{BA126F01-2166-11D1-B1D0-00805FC1270E}</td>
+<td>{BA126F01-2166-11D1-B1D0-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E10F6C3A-F1AE-4adc-AA9D-2FE65525666E}</td>
+<td>{DE3F3560-3032-41B4-B6CF-F703B1B95640}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{49BD2028-1523-11D1-AD79-00C04FD8FDFF}</td>
+<td>{49BD2028-1523-11D1-AD79-00C04FD8FDFF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CBDC4B31-CBE4-4A5B-BECF-64B29E47D2AD}</td>
+<td>{7A7C3277-8F84-4636-95B2-EBB5507FF77E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837529-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F20DA720-C02F-11CE-927B-0800095AE340}</td>
+<td>{F20DA720-C02F-11CE-927B-0800095AE340}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E7F34D0A-582E-4a48-98BA-6E58AAA3AD4C}</td>
+<td>{E7F34D0A-582E-4a48-98BA-6E58AAA3AD4C}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{A55803CC-4D53-404c-8557-FD63DBA95D24}</td>
+<td>{A55803CC-4D53-404c-8557-FD63DBA95D24}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6d2b5079-2f0b-48dd-ab7f-97cec514d30b}</td>
+<td>{1531d583-8375-4d3f-b5fb-d23bbd169f22}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E10F6C3A-F1AE-4ADC-AA9D-2FE65525666E}</td>
+<td>{D63AA156-D534-4BAC-9BF1-55359CF5EC30}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{cee8ccc9-4f6b-4469-a235-5a22869eef03}</td>
+<td>{cee8ccc9-4f6b-4469-a235-5a22869eef03}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F9717507-6651-4EDB-BFF7-AE615179BCCF}</td>
+<td>{c39ee728-d419-4bd4-a3ef-eda059dbd935}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{f4be747e-45c4-4701-90f1-d49d9ac30248}</td>
+<td>{f4be747e-45c4-4701-90f1-d49d9ac30248}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{59347292-B72D-41F2-98C5-E9ACA1B247A2}</td>
+<td>{59347292-B72D-41F2-98C5-E9ACA1B247A2}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7DF8EF76-D449-485f-B4EB-58DC96B31EDB}</td>
+<td>{7DF8EF76-D449-485f-B4EB-58DC96B31EDB}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{71B804C5-5577-471D-8FE5-C4A45B654EB8}</td>
+<td>{71B804C5-5577-471D-8FE5-C4A45B654EB8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{5364ED0E-493F-4B16-9DBF-AE486CF22660}</td>
+<td>{9C38ED61-D565-4728-AEEE-C80952F0ECDE}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{9A630456-078D-43d3-9F1D-DF7A5BC0FA44}</td>
+<td>{9A630456-078D-43d3-9F1D-DF7A5BC0FA44}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0142e4d1-fb7a-11dc-ba4a-000ffe7ab428}</td>
+<td>{0142e4d1-fb7a-11dc-ba4a-000ffe7ab428}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{995C996E-D918-4a8c-A302-45719A6F4EA7}</td>
+<td>{995C996E-D918-4a8c-A302-45719A6F4EA7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6D9A7A40-DDCA-414E-B48E-DFB032C03C1B}</td>
+<td>{AA04CA0B-7597-4F3E-99A8-36712D13D676}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6D9A7A40-DDCA-414E-B48E-DFB032C03C1B}</td>
+<td>{CD8534F7-B1CE-4A6B-B7CD-AA4AE578A20A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E6442437-6C68-4f52-94DD-2CFED267EFB9}</td>
+<td>{E6442437-6C68-4f52-94DD-2CFED267EFB9}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{edb5f444-cb8d-445a-a523-ec5ab6ea33c7}</td>
+<td>{edb5f444-cb8d-445a-a523-ec5ab6ea33c7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{642ef9d6-48a5-476b-919a-a507cfd02c0f}</td>
+<td>{08d450b7-f7e5-4424-8229-11888adb7c14}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CDCBCFCA-3CDC-436f-A4E2-0E02075250C2}</td>
+<td>{75dff2b7-6936-4c06-a8bb-676a7b00b24b}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F3D3AA8D-EF96-4470-848E-BD70B803047A}</td>
+<td>{C529C7EF-A3AF-45F2-8A47-767B33AA5CC0}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0868DC9B-D9A2-4f64-9362-133CEA201299}</td>
+<td>{F87B28F1-DA9A-4F35-8EC0-800EFCF26B83}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{3F4D7BB8-4F38-4526-8CD3-C44D68689C5F}</td>
+<td>{1E1714A3-50B9-480b-A94A-636D9A9B56D1}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6CE51F75-0448-438e-B9CA-69C352A248A7}</td>
+<td>{6CE51F75-0448-438e-B9CA-69C352A248A7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E10F6C3A-F1AE-4adc-AA9D-2FE65525666E}</td>
+<td>{709E2729-F883-441e-A877-ED3CEFC975E6}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{5D05A4EB-54EA-4B7F-A28D-CE51F6BCBAF2}</td>
+<td>{5D05A4EB-54EA-4B7F-A28D-CE51F6BCBAF2}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{1A26548E-BC18-4DB0-B60C-75E8491D34AB}</td>
+<td>{E05FDDED-C4A7-4338-80D7-7577655D5412}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{76db1bf3-e820-4765-a1b2-0b16a86b1950}</td>
+<td>{d54378cd-91d8-4e10-a00b-819f9a9efcb1}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}</td>
+<td>{A2D75874-6750-4931-94C1-C99D3BC9D0C7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{f32d97df-e3e5-4cb9-9e3e-0eb5b4e49801}</td>
+<td>{0D41EBA2-17EA-4B0D-9172-DBD2AE0CC97A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{92C2A9B3-4228-438E-8A7B-EF110987764C}</td>
+<td>{1B7D4AD0-A1B1-43A8-9A46-FB36AB4C1868}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7f9bbc82-ba5f-4448-8622-ef76b8d007e6}</td>
+<td>{010911E2-F61C-479B-B08C-43E6D1299EFE}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F8FD03A6-DDD9-4C1B-84EE-58159476A0D7}</td>
+<td>{49010C18-B110-421a-9047-ADCA421CBC40}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0E11CB54-4C4A-4B37-AE0B-E93CEE60E646}</td>
+<td>{509443A8-B499-4d72-9222-52B82980D8AB}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6D9A7A40-DDCA-414E-B48E-DFB032C03C1B}</td>
+<td>{8A99553A-7971-4445-93B5-AAA43D1433C5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{273541FF-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>{27354129-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{45597c98-80f6-4549-84ff-752cf55e2d29}</td>
+<td>{45597c98-80f6-4549-84ff-752cf55e2d29}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{13390438-AA43-44B5-AEF0-DA857DD05B00}</td>
+<td>{095B9B12-8BDE-49D2-984B-BF01B4F8CDAF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6B1DE8B3-DFB1-4C0E-9D9A-89CA730DE93F}</td>
+<td>{1B462D7B-72D8-4544-ACC1-D84E5B9A8A14}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{B1445657-5A98-11d9-A4E5-00301BB132BA}</td>
+<td>{70445657-5AB0-11d9-A4E5-00301BB132BA}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{9200689A-F979-4eea-8830-0E1D6B74821F}</td>
+<td>{9200689A-F979-4eea-8830-0E1D6B74821F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{B1445657-5A98-11d9-A4E5-00301BB132BA}</td>
+<td>{64445657-9101-11d9-994B-00301BB132BA}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{53362C64-A296-4F2D-A2F8-FD984D08340B}</td>
+<td>{53362C64-A296-4F2D-A2F8-FD984D08340B}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{953E4863-7AD1-4DAE-B2BD-108F1D57967B}</td>
+<td>{20C6F4C2-80A8-4310-A59A-1CC487334236}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{36938566-B1AA-4E77-9B3F-730CF4E996AB}</td>
+<td>{9859049F-C6D1-4e66-B0F8-188FF1064E3C}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0F8DD0B7-D5A6-4C0C-BA04-8A2CA3CE5EE1}</td>
+<td>{DE13E041-1416-430e-9C2F-F7A548D26B3B}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{B366DEBE-645B-43A5-B865-DDD82C345492}</td>
+<td>{4CB43D7F-7EEE-4906-8698-60DA1C38F2FE}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{DE77B1FA-E898-42A0-B647-DFB567BFD89B}</td>
+<td>{C24B9728-35A2-4C36-B763-2B007CFAF70F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{4A6B8BAD-9872-4525-A812-71A52367DC17}</td>
+<td>{4A6B8BAD-9872-4525-A812-71A52367DC17}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0E11CB54-4C4A-4B37-AE0B-E93CEE60E646}</td>
+<td>{E8DF2799-8F1B-4b60-B30F-AED6BBF39625}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{00f2b433-44e4-4d88-b2b0-2698a0a91dba}</td>
+<td>{00f2b433-44e4-4d88-b2b0-2698a0a91dba}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{FA1456D3-4B97-4f9c-8511-2786161DC333}</td>
+<td>{C0DCC3A6-BE26-4bad-9833-61DFACE1A8DB}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{777BA81A-2498-4875-933A-3067DE883070}</td>
+<td>{777BA81A-2498-4875-933A-3067DE883070}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{0383751C-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{5C797117-3B23-4549-A6D8-475AB3B62228}</td>
+<td>{494C063B-1024-4DD1-89D3-713784E82044}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{BBD8C065-5E6C-4e88-BFD7-BE3E6D1C063B}</td>
+<td>{BBD8C065-5E6C-4e88-BFD7-BE3E6D1C063B}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03e15b2e-cca6-451c-8fb0-1e2ee37a27dd}</td>
+<td>{03e15b2e-cca6-451c-8fb0-1e2ee37a27dd}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{C4CDC408-581C-4480-9FFE-3B1C78D5C20D}</td>
+<td>{6A2A9381-5A92-4296-9397-564673AE1FDD}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837538-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{273541FF-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>{2735412A-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{92C2A9B3-4228-438E-8A7B-EF110987764C}</td>
+<td>{2B362208-CB07-4fa5-8076-8DB4AA890561}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7C8AB6D9-8764-4033-8F62-2FE896E54B32}</td>
+<td>{BB2D41DF-7E34-4F06-8F51-007C9CAD36BE}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7007ACD1-3202-11D1-AAD2-00805FC1270E}</td>
+<td>{7007ACD1-3202-11D1-AAD2-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{DCED8DB0-11A5-4b16-AB9D-4E28CA38C99F}</td>
+<td>{DCED8DB0-11A5-4b16-AB9D-4E28CA38C99F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{9af8cd33-7aae-4cc2-b00a-835f6721e3c2}</td>
+<td>{D5E8041D-920F-45e9-B8FB-B1DEB82C6E5E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{B366DEBE-645B-43A5-B865-DDD82C345492}</td>
+<td>{F8D253D9-89A4-4daa-87B6-1168369F0B21}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{36938566-B1AA-4E77-9B3F-730CF4E996AB}</td>
+<td>{D6E88812-F325-4dc1-BBC7-23076618E58D}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E10F6C3A-F1AE-4ADC-AA9D-2FE65525666E}</td>
+<td>{6B56A227-7150-4A1F-A114-C959EB8F8C24}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837546-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{C3A34354-660F-41EE-B072-2AEA5E3A80AF}</td>
+<td>{32BA16FD-77D9-4AFB-9C9F-703E92AD4BFF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{BBC4356A-F004-4628-A27A-E13D70412B70}</td>
+<td>{F1EFACAA-08A1-461B-9D28-7AA8947889A0}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{F135BE18-BF34-4CBD-B1D5-55D49F0DEDCC}</td>
+<td>{89115307-8248-448f-ADA0-F3F3718A9B2A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CB1DFE3A-EDFF-4d1f-867D-8ADB02926F4B}</td>
+<td>{CB1DFE3A-EDFF-4d1f-867D-8ADB02926F4B}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6571503D-D0FB-4D98-BBC3-1FBB2B3F344E}</td>
+<td>{752438CB-E941-433F-BCB4-8B7D2329F0C8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{292bed96-e9ce-40f8-b71b-c313defa3a78}</td>
+<td>{c463a0fc-794f-4fdf-9201-01938ceacafa}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{27170d71-7a40-4c8b-a3d1-64f7cbe81c66}</td>
+<td>{46CB32FA-B5CA-8A3A-62CA-A7023C0496C5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{3ad05575-8857-4850-9277-11b85bdb8e09}</td>
+<td>{3ad05575-8857-4850-9277-11b85bdb8e09}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{B366DEBE-645B-43A5-B865-DDD82C345492}</td>
+<td>{BFE18E9C-6D87-4450-B37C-E02F0B373803}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{40AEEAB6-8FDA-41e3-9A5F-8350D4CFCA91}</td>
+<td>{3050f4d8-98B5-11CF-BB82-00AA00BDCE0B}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CBDC4B31-CBE4-4A5B-BECF-64B29E47D2AD}</td>
+<td>{4C596AEC-8544-4082-BA9F-EB0A7D8E65C6}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{e30984f1-b02b-4c27-a40f-23d11b8c1212}</td>
+<td>{26D32566-760A-40A2-AA82-A40366528916}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{DE5DBCDC-104A-4cbc-A4D5-0C2104A142C5}</td>
+<td>{5440837F-4BFF-4AE5-A1B1-7722ECC6332A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{8C334A55-DDB9-491C-817E-35A6B85D2ECB}</td>
+<td>{8C334A55-DDB9-491c-817E-35A6B85D2ECB}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7B29F495-0F55-49F7-8885-9E8A22CE3829}</td>
+<td>{bdb57ff2-79b9-4205-9447-f5fe85f37312}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{87BB326B-E4A0-4DE1-94F0-B9F41D0C6059}</td>
+<td>{87BB326B-E4A0-4de1-94F0-B9F41D0C6059}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{B8558612-DF5E-4F95-BB81-8E910B327FB2}</td>
+<td>{B8558612-DF5E-4F95-BB81-8E910B327FB2}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{86F80216-5DD6-4F43-953B-35EF40A35AEE}</td>
+<td>{86F80216-5DD6-4F43-953B-35EF40A35AEE}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{2C5BC43E-3369-4C33-AB0C-BE9469677AF4}</td>
+<td>{2C5BC43E-3369-4C33-AB0C-BE9469677AF4}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837530-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{D215781D-019E-4FA0-903D-0CDCDE13A4F5}</td>
+<td>{D215781D-019E-4FA0-903D-0CDCDE13A4F5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{AA0B85DA-FDDF-4272-8D1D-FF9B966D75B0}</td>
+<td>{BA7C0D29-81CA-4901-B450-634E20BB8C34}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{AB93B6F1-BE76-4185-A488-A9001B105B94}</td>
+<td>{AB93B6F1-BE76-4185-A488-A9001B105B94}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{D2E7041B-2927-42fb-8E9F-7CE93B6DC937}</td>
+<td>{D2E7041B-2927-42fb-8E9F-7CE93B6DC937}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E5BBC23C-0570-4B7A-AEE3-A0698AD0CA04}</td>
+<td>{7DA49535-DB7D-47d5-9552-6DAEFA831E64}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{48da6741-1bf0-4a44-8325-293086c79077}</td>
+<td>{3B881B82-5BF4-4657-A3A2-CCE17E4FD39A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{06622D85-6856-4460-8DE1-A81921B41C4B}</td>
+<td>{06622D85-6856-4460-8DE1-A81921B41C4B}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{41CA32F2-698A-4fd8-BB78-B102CE155F53}</td>
+<td>{1A39680C-2376-4E8E-B168-2148D7FF9AF4}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6f5bad87-9d5e-459f-bd03-3957407051ca}</td>
+<td>{6f5bad87-9d5e-459f-bd03-3957407051ca}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{c5bbbd35-e321-468a-9884-6708aa083f83}</td>
+<td>{677126ed-2a91-40ff-8c52-06181c064573}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{D0565000-9DF4-11D1-A281-00C04FCA0AA7}</td>
+<td>{D0565000-9DF4-11D1-A281-00C04FCA0AA7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{36938566-B1AA-4E77-9B3F-730CF4E996AB}</td>
+<td>{4CE576FA-83DC-4f88-951C-9D0782B4E376}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{C49F2185-50A7-11D3-9144-00104BA11C5E}</td>
+<td>{520CCA61-51A5-11D3-9144-00104BA11C5E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{92C2A9B3-4228-438E-8A7B-EF110987764C}</td>
+<td>{F80608CB-5A88-4046-9E4B-3C1BB368F2DA}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{e4803a36-7232-4ac0-a6af-29d59ebcc303}</td>
+<td>{0002DF01-0000-0000-C000-000000000046}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{6D9A7A40-DDCA-414E-B48E-DFB032C03C1B}</td>
+<td>{179CC917-3A82-40E7-9F8C-2FC8A3D2212B}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{84D586C4-A423-11D2-B943-00C04F79D22F}</td>
+<td>{84D586C4-A423-11D2-B943-00C04F79D22F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{7007ACC5-3202-11D1-AAD2-00805FC1270E}</td>
+<td>{7007ACC5-3202-11D1-AAD2-00805FC1270E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{03837503-098b-11d8-9414-505054503030}</td>
+<td>{03837528-098B-11D8-9414-505054503030}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{777BA81A-2498-4875-933A-3067DE883070}</td>
+<td>{777BA8F5-2498-4875-933A-3067DE883070}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{ECABB0C6-7F19-11D2-978E-0000F8757E2A}</td>
+<td>{ECABB0C6-7F19-11D2-978E-0000F8757E2A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{C92A9617-0EAE-4235-BD2B-84540EF1FFA9}</td>
+<td>{B43A0C1E-B63F-4691-B68F-CD807A45DA01}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CDCBCFCA-3CDC-436f-A4E2-0E02075250C2}</td>
+<td>{682159d9-c321-47ca-b3f1-30e36b2ec8b9}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{06C792F8-6212-4F39-BF70-E8C0AC965C23}</td>
+<td>{06C792F8-6212-4F39-BF70-E8C0AC965C23}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{76D0CB12-7604-4048-B83C-1005C7DDC503}</td>
+<td>{76D0CB12-7604-4048-B83C-1005C7DDC503}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{E1990E85-DFE4-4410-82CE-C74C57BF6E8E}</td>
+<td>{7FA3A1C3-3C87-40de-AC16-B6E2815A4CC8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{69F9CB25-25E2-4BE1-AB8F-07AA7CB535E8}</td>
+<td>{69F9CB25-25E2-4BE1-AB8F-07AA7CB535E8}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{44C39C96-0167-478F-B68D-783294A2545D}</td>
+<td>{44C39C96-0167-478F-B68D-783294A2545D}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{C49F2185-50A7-11D3-9144-00104BA11C5E}</td>
+<td>{520CCA63-51A5-11D3-9144-00104BA11C5E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{A0ADD4EC-5BD3-4f70-A47B-07797A45C635}</td>
+<td>{A0ADD4EC-5BD3-4f70-A47B-07797A45C635}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{FC38B7C8-9E50-497d-A387-7DEBDAD14160}</td>
+<td>{8E4062D9-FE1B-4b9e-AA16-5E8EEF68F48E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{f32d97df-e3e5-4cb9-9e3e-0eb5b4e49801}</td>
+<td>{883FF1FC-09E1-48e5-8E54-E2469ACB0CFD}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{00393519-3A67-4507-A2B8-85146167ACA7}</td>
+<td>{00393519-3A67-4507-A2B8-85146167ACA7}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{273541FF-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>{25983561-9D65-49CE-B335-40630D901227}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{CCFDD24D-CEAB-458B-A4F1-F884973395DF}</td>
+<td>{A6C13C9D-54E1-44FC-82F0-DBE2C843E51A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{C49F2185-50A7-11D3-9144-00104BA11C5E}</td>
+<td>{8A03567A-63CB-4BA8-BAF6-52119816D1EF}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{63CE6D27-426A-41F9-8E51-549C1132DAE2}</td>
+<td>{967696C6-354C-4B5C-9CC8-BD9E1C480C77}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{273541FF-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>{27354126-7F64-5B0F-8F00-5D77AFBE261E}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{46C166AA-3108-11D4-9348-00C04F8EEB71}</td>
+<td>{46C166AA-3108-11D4-9348-00C04F8EEB71}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{EC9846B3-2762-4A6B-A214-6ACB603462D2}</td>
+<td>{EC9846B3-2762-4A6B-A214-6ACB603462D2}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{D3667F1E-CCB8-4A69-99DF-59A2B2A6753F}</td>
+<td>{D3667F1E-CCB8-4A69-99DF-59A2B2A6753F}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{ED6BB178-B06A-47ad-98B3-6066E0CF0147}</td>
+<td>{94E03510-31B9-47a0-A44E-E932AC86BB17}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{2C256447-3F0D-4CBB-9D12-575BB20CDA0A}</td>
+<td>{2C256447-3F0D-4CBB-9D12-575BB20CDA0A}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{B366DEBE-645B-43A5-B865-DDD82C345492}</td>
+<td>{317E92FC-1679-46FD-A0B5-F08914DD8623}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{3eb3c877-1f16-487c-9050-104dbcd66683}</td>
+<td>{0358b920-0ac7-461f-98f4-58e32cd89148}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{534A1E02-D58F-44f0-B58B-36CBED287C7C}</td>
+<td>{53BEDF0B-4E5B-4183-8DC9-B844344FA104}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{0E11CB54-4C4A-4B37-AE0B-E93CEE60E646}</td>
+<td>{a8298e0c-7201-470e-84d5-728cff85bcbf}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{09C5C2B5-1D32-4598-B87E-203F32BB08E3}</td>
+<td>{031EE060-67BC-460d-8847-E4A7C5E45A27}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{2C941FD1-975B-59BE-A960-9A2A262853A5}</td>
+<td>{2C941FCE-975B-59BE-A960-9A2A262853A5}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{893CFE8F-CD6B-412E-A2F0-10840D69E858}</td>
+<td>{0c98b8bc-273c-464d-938a-b9709607e137}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{FFB8655F-81B9-4fce-B89C-9A6BA76D13E7}</td>
+<td>{FFB8655F-81B9-4fce-B89C-9A6BA76D13E7}</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../windows%2010%20pro/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Windows 10 Pro |" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Windows 10 Pro |
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../5-linux-privesc/4-2-linux-privesc/" class="md-footer__link md-footer__link--next" aria-label="Next: linux privesc" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              linux privesc
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": "v1.0.0"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>
