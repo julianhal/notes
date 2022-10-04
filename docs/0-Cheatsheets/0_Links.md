@@ -3,17 +3,23 @@
 
 ## General CTF cheat sheets
 [JohnHammond - CTF-katana](https://github.com/JohnHammond/ctf-katana)  
+[H4cktricks](https://book.hacktricks.xyz/welcome/readme)
+[Pentesting tools cheat sheet](https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/)  
 [Trail_Of_Bits cheat sheet](https://trailofbits.github.io/ctf/forensics/)  
 <https://dvd848.github.io/CTFs/CheatSheet.html>  
+[Art of hacking](https://github.com/The-Art-of-Hacking/h4cker)
+
+### Web
 [Web ctf cheat sheets](https://github.com/w181496/Web-CTF-Cheatsheet)  
 [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/Query_Parameterization_Cheat_Sheet.html)    
 <https://github.com/hasamba/Hacking-and-CTF-Cheat-Sheet/blob/main/Hacking%20Cheat%20Sheet.md#hacking-cheat-sheet>  
 
 
 ## Metapsploit
-[MSFconsole Core Commands - Offensive security](https://www.offensive-security.com/metasploit-unleashed/msfconsole-commands/)
+[MSFconsole Core Commands - Metasploit-unleashed](https://www.offensive-security.com/metasploit-unleashed/msfconsole-commands/)
 
 ## OSCP
+[Awsome OSCP](https://github.com/0x4D31/awesome-oscp)
 [OSCP-Prep-cheatsheets](https://github.com/evets007/OSCP-Prep-cheatsheet)  
 [OSCP-prepsite](https://www.noobsec.net/oscp-cheatsheet/)  
 [CTF-CheatSheets](https://github.com/Rajchowdhury420/CTF-CheatSheet)  
@@ -24,10 +30,21 @@
 [Buffer Overflows Made Easy - YT playlist](https://www.youtube.com/playlist?list=PLLKT__MCUeix3O0DPbmuaRuR_4Hxo4m3G)  
 [BOF guide github](https://github.com/johnjhacking/Buffer-Overflow-Guide)  
 
+
+## Google doorking
+[Google dork queries](https://www.techtarget.com/whatis/definition/Google-dork-query)  
+[Google Dorking](https://securitytrails.com/blog/google-hacking-techniques)    
+
 ## etc
-[Google Dorking](https://securitytrails.com/blog/google-hacking-techniques)  
 [Collection of cheat sheets](https://zweilosec.gitbook.io/hackers-rest/tools-cheatsheets)  
 [Art of hacking - ressources collection](https://github.com/The-Art-of-Hacking/h4cker)  
+
+
+
+
+## Cracking
+[Introduction to password cracking](https://alexandreborgesbrazil.files.wordpress.com/2013/08/introduction_to_password_cracking_part_1.pdf)  
+
 
 
 # Learning and docs 
